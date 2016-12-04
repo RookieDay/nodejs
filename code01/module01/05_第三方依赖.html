@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第三方依赖</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="x">
+        <select name="" id="opt">
+      <option value="0"> + </option>
+      <option value="1"> - </option>
+      <option value="2"> * </option>
+      <option value="3"> / </option>
+      <option value="4"> % </option>
+    </select>
+        <input type="text" id="y">
+        <input type="button" id="btn" value="=">
+        <input type="text" id="result">
+    </div>
+    <!-- 
+    模块依赖的问题
+    1. 手动方式加载：不方便
+    2. 模块的加载顺序：可能会出错
+   -->
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script>
+        /**
+         * 通过 匿名自执行函数，利用函数作用域的机制 隔离私有变量
+         */
+
+        var calculator = (function() {
+            // 对于 _count 来说，如果不通过 return ，外部是无法访问的，无法修改
+            var _count = 10;
+
+            function add(x, y) {
+                return parseFloat(x) + parseFloat(y);
+            };
+
+            function substract(x, y) {
+                return parseFloat(x) - parseFloat(y);
+            };
+
+            function multiply(x, y) {
+                return parseFloat(x) * parseFloat(y);
+            };
+
+            function divide(x, y) {
+                return parseFloat(x) / parseFloat(y);
+            };
+            return {
+                add: add,
+                substract: substract,
+                multiply: multiply,
+                divide: divide
+            };
+        })();
+
+        // 下面这个扩展的模块--- 处理第三方依赖
+        var calculator = (function(cal, $) {
+            cal.changeColor = function() {
+                $('#x').css('backgroundColor', 'red');
+                $('#y').css('backgroundColor', 'green');
+            };
+
+            // ============== 此处有1000行代码 ================
+            // template()  $  ...
+            // ============== /此处有1000行代码================
+
+            return cal;
+
+            // 一定要把依赖项 通过参数的形式 注入进来，然后在内部使用注入的属性
+            // 好处：1. 依赖关系变的明显，有利于代码的阅读
+            // 2. 提高了性能：减少了作用域的查找范围
+            //通过看这里的参数  就知道了我们的这个模块依赖了哪些
+
+        })(window.calculator || {}, window.$);
+
+        var oX = document.getElementById('x');
+        var oY = document.getElementById('y');
+        var oOpt = document.getElementById('opt');
+        var oBtn = document.getElementById('btn');
+        var oResult = document.getElementById('result');
+
+        oBtn.addEventListener('click', function(e) {
+            calculator.changeColor();
+            var x = oX.value.trim();
+            var y = oY.value.trim();
+            var opt = oOpt.value;
+
+            var result = 0;
+            switch (opt) {
+                case '0':
+                    result = calculator.add(x, y);
+                    break;
+                case '1':
+                    result = calculator.substract(x, y);
+                    break;
+                case '2':
+                    result = calculator.multiply(x, y);
+                    break;
+                case '3':
+                    result = calculator.divide(x, y);
+                    break;
+                case '4':
+                    result = calculator.mod(x, y);
+                    break;
+            }
+            oResult.value = result;
+        });
+    </script>
+</body>
+
+</html>

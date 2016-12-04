@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>划分私有空间</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="x">
+        <select name="" id="opt">
+      <option value="0"> + </option>
+      <option value="1"> - </option>
+      <option value="2"> * </option>
+      <option value="3"> / </option>
+      <option value="4"> % </option>
+    </select>
+        <input type="text" id="y">
+        <input type="button" id="btn" value="=">
+        <input type="text" id="result">
+    </div>
+    <script>
+        /**
+         * 通过 匿名自执行函数，利用函数作用域的机制 隔离私有变量
+         */
+
+        var calculator = (function() {
+            // 对于 _count 来说，如果不通过 return ，外部是无法访问的，无法修改
+            var _count = 10;
+
+            function add(x, y) {
+                return parseFloat(x) + parseFloat(y);
+            };
+
+            function substract(x, y) {
+                return parseFloat(x) - parseFloat(y);
+            };
+
+            function multiply(x, y) {
+                return parseFloat(x) * parseFloat(y);
+            };
+
+            function divide(x, y) {
+                return parseFloat(x) / parseFloat(y);
+            };
+            return {
+                add: add,
+                substract: substract,
+                multiply: multiply,
+                divide: divide
+            };
+        })();
+
+        // 以下部分进行模块扩展
+        var calculator = (function(cal) {
+            cal.mod = function(x, y) {
+                return x % y;
+            };
+            return cal;
+        })(window.calculator || {});
+        // 扩展的时候看一下 全局有没有 calculator 该对象，如果有，直接使用该对象就可以了
+        // 如果没有，给一个默认的空对象，一种更 鲁棒 的做法，更高的容错性，永远不要相信用户的输入
+
+
+
+        var oX = document.getElementById('x');
+        var oY = document.getElementById('y');
+        var oOpt = document.getElementById('opt');
+        var oBtn = document.getElementById('btn');
+        var oResult = document.getElementById('result');
+
+        oBtn.addEventListener('click', function(e) {
+            var x = oX.value.trim();
+            var y = oY.value.trim();
+            var opt = oOpt.value;
+
+            var result = 0;
+            switch (opt) {
+                case '0':
+                    result = calculator.add(x, y);
+                    break;
+                case '1':
+                    result = calculator.substract(x, y);
+                    break;
+                case '2':
+                    result = calculator.multiply(x, y);
+                    break;
+                case '3':
+                    result = calculator.divide(x, y);
+                    break;
+                case '4':
+                    result = calculator.mod(x, y);
+                    break;
+            }
+            oResult.value = result;
+        });
+    </script>
+</body>
+
+</html>

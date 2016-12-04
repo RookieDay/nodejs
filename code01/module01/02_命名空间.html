@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全局函数</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="x">
+        <select name="" id="opt">
+      <option value="0"> + </option>
+      <option value="1"> - </option>
+      <option value="2"> * </option>
+      <option value="3"> / </option>
+    </select>
+        <input type="text" id="y">
+        <input type="button" id="btn" value="=">
+        <input type="text" id="result">
+    </div>
+    <script>
+        /**
+         * 命名空间的方式 - 减少了命名冲突的问题
+         */
+
+        var calculator = {};
+
+        calculator.count = 10;
+
+        calculator.add = function(x, y) {
+            return parseFloat(x) + parseFloat(y);
+        };
+
+        calculator.sub_module = {};
+
+        // 命名空间的形式会越来越长，不容易记忆，而且代码不够优雅
+        calculator.sub_module.foo = 'bar';
+
+
+        calculator.substract = function(x, y) {
+            return parseFloat(x) - parseFloat(y);
+        };
+
+        calculator.multiply = function(x, y) {
+            return parseFloat(x) * parseFloat(y);
+        };
+
+        calculator.divide = function(x, y) {
+            return parseFloat(x) / parseFloat(y);
+        };
+
+        var oX = document.getElementById('x');
+        var oY = document.getElementById('y');
+        var oOpt = document.getElementById('opt');
+        var oBtn = document.getElementById('btn');
+        var oResult = document.getElementById('result');
+
+        oBtn.addEventListener('click', function(e) {
+            var x = oX.value.trim();
+            var y = oY.value.trim();
+            var opt = oOpt.value;
+
+            var result = 0;
+            switch (opt) {
+                case '0':
+                    result = calculator.add(x, y);
+                    break;
+                case '1':
+                    result = calculator.substract(x, y);
+                    break;
+                case '2':
+                    result = calculator.multiply(x, y);
+                    break;
+                case '3':
+                    result = calculator.divide(x, y);
+                    break;
+            }
+            oResult.value = result;
+        });
+    </script>
+</body>
+
+</html>

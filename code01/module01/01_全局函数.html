@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全局函数</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="x">
+        <select name="" id="opt">
+      <option value="0"> + </option>
+      <option value="1"> - </option>
+      <option value="2"> * </option>
+      <option value="3"> / </option>
+    </select>
+        <input type="text" id="y">
+        <input type="button" id="btn" value="=">
+        <input type="text" id="result">
+    </div>
+    <script>
+        var oX = document.getElementById('x');
+        var oY = document.getElementById('y');
+        var oOpt = document.getElementById('opt');
+        var oBtn = document.getElementById('btn');
+        var oResult = document.getElementById('result');
+
+        oBtn.addEventListener('click', function(e) {
+            var x = oX.value.trim();
+            var y = oY.value.trim();
+            var opt = oOpt.value;
+
+            var result = 0;
+            switch (opt) {
+                case '0':
+                    result = add(x, y);
+                    break;
+                case '1':
+                    result = substract(x, y);
+                    break;
+                case '2':
+                    result = multiply(x, y);
+                    break;
+                case '3':
+                    result = divide(x, y);
+                    break;
+            }
+            oResult.value = result;
+        });
+
+        /**
+         * 全局函数方式污染了全局变量
+         */
+
+        function add(x, y) {
+            return parseFloat(x) + parseFloat(y);
+        }
+
+        function substract(x, y) {
+            return parseFloat(x) - parseFloat(y);
+        }
+
+        function multiply(x, y) {
+            return parseFloat(x) * parseFloat(y);
+        }
+
+        function divide(x, y) {
+            return parseFloat(x) / parseFloat(y);
+        }
+
+        // 初始化一个 tab 选项卡
+        function init() {
+
+        }
+    </script>
+</body>
+
+</html>
