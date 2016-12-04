@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>API演示</title>
+</head>
+
+<body>
+  <script src="../lib/seajs-3.0.0/dist/sea.js"></script>
+  <script>
+  // seajs.use('define.js');
+  seajs.use('./define.js', function(obj) {
+    console.log(obj, typeof obj);
+  });
+
+  // seajs.use 可以调用多次
+  // seajs.use('./drag.js', function(obj) {
+  //   console.log(obj, typeof obj);
+  // });
+
+  // seajs.use('./tab.js', function(obj) {
+  //   console.log(obj, typeof obj);
+  // });
+  </script>
+</body>
+
+</html>
