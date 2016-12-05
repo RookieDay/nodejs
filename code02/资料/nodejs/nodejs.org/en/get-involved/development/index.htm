@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Development | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/get-involved/development/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="../../styles.css" tppabs="https://nodejs.org/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../www.google-analytics.com/analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="javascript:if(confirm(%27https://nodejs.org/en  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en%27" tppabs="https://nodejs.org/en" id="logo">
+              <img src="../../../static/images/logos/nodejs-new-white-pantone.png" tppabs="https://nodejs.org/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="../../index.htm" tppabs="https://nodejs.org/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="../../about/index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="../../download/index.htm" tppabs="https://nodejs.org/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="../../docs/index.htm" tppabs="https://nodejs.org/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="../../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                        </li>
+                        <li class="active">
+                            <a href="../index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="../../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="../../blog/index.htm" tppabs="https://nodejs.org/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                                <li>
+                                            <a href="../index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                                </li>
+                                <li>
+                                            <a href="../code-and-learn/index.htm" tppabs="https://nodejs.org/en/get-involved/code-and-learn/">Code + Learn</a>
+                                </li>
+                                <li>
+                                            <a href="../contribute/index.htm" tppabs="https://nodejs.org/en/get-involved/contribute/">Contribute</a>
+                                </li>
+                                <li class="active">
+                                            <a href="index.htm" tppabs="https://nodejs.org/en/get-involved/development/">Development</a>
+                                </li>
+                                <li>
+                                            <a href="../events/index.htm" tppabs="https://nodejs.org/en/get-involved/events/">Events</a>
+                                </li>
+                                <li>
+                                            <a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/CONTRIBUTING.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct%27" tppabs="https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct">Conduct</a>
+                                </li>
+                </ul>
+            </aside>
+
+            <article>
+                <a class="edit-link" href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/get-involved/development.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/get-involved/development.md%27" tppabs="https://github.com/nodejs/nodejs.org/edit/master/locale/en/get-involved/development.md">Edit on GitHub</a> <h1>Development<a name="development" class="anchor" href="#development"></a></h1><h2>Table of Contents<a name="table-of-contents" class="anchor" href="#table-of-contents"></a></h2><ul>
+<li><a href="#guiding-principles">Guiding Principles</a></li>
+<li><a href="#contributing">Contributing</a><ul>
+<li><a href="#collaborators">Collaborators</a></li>
+<li><a href="#accepting-modifications-through-a-consensus-seeking-process">Accepting Modifications</a></li>
+<li><a href="#release-related-commits-and-error-corrections">Release-related Commits</a></li>
+<li><a href="#landing-pull-requests">Landing Pull Requests</a></li>
+<li><a href="#issue-and-pull-request-tagging">Issue Tagging</a></li>
+</ul>
+</li>
+<li><a href="#release-process-and-branching-model">Release Process and Branching Model</a><ul>
+<li><a href="#release-versioning">Release Versioning</a></li>
+<li><a href="#release-process-for-master">Release Process for Master</a></li>
+</ul>
+</li>
+<li><a href="#long-term-support-working-group-roadmap">Long Term Support Working Group</a></li>
+<li><a href="#issues-workflow">Issues Workflow</a></li>
+<li><a href="#stability-policy">Stability Policy</a><ul>
+<li><a href="#implicit-vs-explicit-api-stability">Implicit vs. Explicit API Stability</a></li>
+<li><a href="#platform-stability">Platform Stability</a></li>
+<li><a href="#dependency-stability">Dependency Stability</a></li>
+</ul>
+</li>
+<li><a href="#working-groups">Working Groups</a></li>
+<li><a href="#developers-certificate-of-origin">Developer&#39;s Certificate of Origin 1.1</a></li>
+<li><a href="#a-few-open-questions">A Few Open Questions</a></li>
+<li><a href="#notes">Notes</a></li>
+</ul>
+<hr>
+<h2>Guiding Principles<a name="guiding-principles" class="anchor" href="#guiding-principles"></a></h2><p>The Fundamental goal of the Node.js Project is to provide a JavaScript-based application development platform that is <em>current</em>, <em>reliable</em> and <em>stable</em>.</p>
+<p>Contributors to Node.js work in concert with one another <em>on behalf of</em> the Community of users who build their applications and businesses on top of the Node.js platform. Accordingly, contributors must demonstrate an ongoing commitment, not only to the Project, but to the stability and vitality of the Community as a whole.</p>
+<p>It is vital that users trust the Contributors to have their best interests in mind while making decisions affecting the overall direction of the platform. This means having defined guidelines, stable APIs, a clear roadmap, and a predictable release schedule. The user community and developer ecosystem must be included in the decision making process.</p>
+<p>Adoption of new capabilities and features within Node.js must be carefully balanced by the expressed needs of the users and the community. Change just for the sake of change must be avoided and a guaranteed long term support policy must be established.</p>
+<p>Node.js owes much of its success to the existing ecosystem of module and add-on developers. The Node.js project should do everything it can to support the continued growth and stability of that ecosystem. This includes, but is not limited to, keeping Node.js focused on providing a minimal kernel of core functionality while deferring, as much as possible, additional capabilities and features to add-on modules or applications.</p>
+<p>In order to best serve the Node.js Community as a whole, the development, release and issue management processes adopted by the Node.js Foundation TSC must reflect these guiding principles.</p>
+<h2>Contributing<a name="contributing" class="anchor" href="#contributing"></a></h2><h3>Collaborators<a name="collaborators" class="anchor" href="#collaborators"></a></h3><p>The Node.js project is maintained by individual Collaborators. The Technical Steering Committee (TSC) membership consists of key Collaborators who have demonstrated both technical expertise critical to the ongoing maintenance and evolution of the project and a long term commitment to driving the project and community forward.</p>
+<p>Individuals can be nominated as Collaborators by TSC members. Once the nomination is approved by the TSC, the invitation to become a Collaborator is extended to the individual. The invitation must include a copy of the project Developer’s Certificate of Origin (DCO, see below). Assuming the individual accepts the invitation, they are granted commit-access to the project.</p>
+<p>Nominations for Collaborator Status happen through the typical TSC decision making process. That is, to nominate one or more Collaborators, an issue containing the names of all collaborators being nominated is created and put on the TSC meeting agenda. The issue is approved or rejected following the same Consensus Seeking Process used for any other issue or PR.</p>
+<p>Individuals can self-petition the TSC for Collaborator status by submitting an issue requesting to be put on the TSC meeting agenda. In order to be considered however, such self-nominations must be sponsored by an existing TSC member, after which it follows the same process as above. To sponsor a nomination, the TSC member must indicate consent within the issue text or associated comment thread.</p>
+<p>Collaborators can be nominated to become members of the TSC following the same nomination and approval model. However, Collaborators cannot nominate themselves for TSC membership. An individual cannot be nominated and accepted into the TSC without first having been nominated and accepted as a Collaborator.</p>
+<h3>Accepting Modifications through a Consensus Seeking Process<a name="accepting-modifications-through-a-consensus-seeking-process" class="anchor" href="#accepting-modifications-through-a-consensus-seeking-process"></a></h3><p>A &quot;Contribution&quot; to the Project is any work that is voluntarily submitted to the project. These include not only source code in the form of bug fixes, code improvements, new functions, etc, but contributions to documentation, design etc that are intended for the overall improvement of the project.</p>
+<p>Contributions to the Project are made on a collaborative basis. Any individual with a GitHub account may propose a Contribution by submitting a Pull Request (PR). Like the TSC governance, acceptance of Contributions (a.k.a. &quot;landing a Pull Request&quot;) into the Project follows the Consensus Seeking decision making model as described in the Project TSC Charter.</p>
+<p>All Pull Requests submitted by individuals who are not Collaborators must be signed-off on by an existing Collaborator before the PR can be landed. The sponsoring Collaborator becomes responsible for the PR. Pull Requests from an existing Collaborator must be signed-off on by at least one other Collaborator.</p>
+<p>Before any Pull Request is landed, sufficient time should be given to receive input from other Collaborators with sufficient expertise to evaluate the changes. Specifically, at least 48 hours during the typical working week and 72 hours over weekends should be given to account for international time differences and work schedules. Trivial Pull Requests may be landed after a shorter delay.</p>
+<p>If it becomes apparent that the changes proposed by a given Pull Request: (a) have significant impact on the project as a whole; (b) are inherently controversial; or (c) have failed to reach consensus amongst Collaborators, the Pull Request can be elevated for review by either a specific Working Group (by attaching a WG specific tag to the PR) or the TSC (by attaching the <em>tsc-agenda</em> tag to the PR). Pull Requests that have been flagged for TSC or Working Group review must not be landed until the TSC or Working Group has had sufficient opportunity to review the issue and render a decision. A Working Group may choose to defer the issue to the TSC.</p>
+<p>Pull Requests that require an increase in the Major version must be elevated for review by the TSC. This does not necessarily mean that the PR must be put onto the TSC meeting agenda. If enough TSC members sign-off on the PR and there is clear consensus among TSC members for the change, the Pull Request can be landed. Where there is disagreement among TSC members, <em>semver-major</em> Pull Requests should be put on the TSC meeting agenda.</p>
+<p>Specific Collaborators or Working Groups can be requested to review any PR by using an <em>@-mention</em> either within the PR text itself or the associated comment stream.</p>
+<p>Collaborators sign-off on a Pull Request by explicitly stating their approval in the PR text or associated comment stream. If a Collaborator is unsure about the modification or is not prepared to take full responsibility for the change, they should defer to another Collaborator.</p>
+<p>Exception to this process is allowed for high-priority changes that address security vulnerabilities. A shorter review period and modified sign-off process may be necessary depending on the nature of the change and severity of the issue. It is recommended that the TSC establish a Security Working Group of Collaborators with recognized security expertise that can be tasked with reviewing security related Pull Requests and determining an appropriate review process.</p>
+<p>All Pull Requests that either fix bugs or introduce new functionality require at least one test case demonstrating the defect or validating the intended functionality. For bug fixes, the test should fail before the change, and pass after the change. In exceptional cases, such as environments or failure modes that are difficult to reproduce, a detailed description of how to verify the fix may be accepted in lieu of a specific test.</p>
+<p>Pull Requests for changes intended to improve performance require a benchmark demonstrating the performance impact. The benchmark should demonstrate improved performance after the change is applied.</p>
+<h3>Release-related Commits and error corrections<a name="release-related-commits-and-error-corrections" class="anchor" href="#release-related-commits-and-error-corrections"></a></h3><p>When cutting a new release, it is typically necessary to commit a few specific changes to the repository. These include tasks like updating the release notes and incrementing the current version number.</p>
+<p>It&#39;s also possible for errors to come up in the basic management of the project repository (caused either by simple human error or bugs in the tooling used to manage the project). Correction of such errors may require additional changes to be landed.</p>
+<p>Such changes can be landed after a significantly shorter review period if the changes are strictly targeted at repairing the current state of the repository or cutting a new release. Effort should still be made to solicit review of such changes in advance of landing them.</p>
+<h3>Landing Pull Requests<a name="landing-pull-requests" class="anchor" href="#landing-pull-requests"></a></h3><p>When Landing a Pull Request, a Collaborator must modify the original commit message to include the following additional meta information regarding the change process:</p>
+<ul>
+<li>A <code>Reviewed-By: Name &lt;email&gt;</code> line for yourself and any other Collaborators who have reviewed the change.</li>
+<li>A <code>PR-URL:</code> line that references the full GitHub URL of the original Pull Request being merged so it&#39;s easy to trace a commit back to the conversation that lead up to that change.</li>
+<li>A <code>Fixes: X</code> line as appropriate, where <code>X</code> includes the full GitHub URL for an issue, and/or the complete or abbreviated hash identifier and commit message if the commit fixes a bug in a previous commit. Multiple <code>Fixes:</code> lines may be added if appropriate.</li>
+</ul>
+<p>Additionally, Collaborators should:</p>
+<ul>
+<li>Double check Pull Requests to make sure the author&#39;s full name and email address are correct before merging.</li>
+<li>Verify that every commit passes all tests.</li>
+</ul>
+<h3>Issue and Pull Request Tagging<a name="issue-and-pull-request-tagging" class="anchor" href="#issue-and-pull-request-tagging"></a></h3><p>All Issues and Pull Requests should be tagged with their respective feature areas. This helps organize issues and makes it easier for Collaborators to keep track of the items most relevant to them.</p>
+<p>The labels <em>discuss</em>, <em>meta</em>, <em>future</em>, and <em>ideas</em> are used to label issues that are not bugs or features requests.</p>
+<p>The <em>help-wanted</em> tag is used to draw attention to Issues and Pull Requests that need contributions.</p>
+<p>When a Pull Request is not ready to merge, and is still being iterated on or reviewed, it should have the <em>in-progress</em> tag applied.</p>
+<p>The <em>semver-minor</em> and <em>semver-major</em> tags are used for Pull Requests that will cause a version iteration other than patch once released.</p>
+<p>The <em>tsc-agenda</em> tag is used to elevate items to the next TSC meeting. TSC meeting notes and announcements should have the <em>tsc-meeting</em> tag.</p>
+<p>Every Working Group must specify a tag that can be used to indicate items for review by the Working Group and a tag that can be used to identify Working Group meeting notes and announcements.</p>
+<h2>Release Process and Branching Model<a name="release-process-and-branching-model" class="anchor" href="#release-process-and-branching-model"></a></h2><p>The Project source repository will be organized into a single <code>master</code> branch, multiple maintenance branches, and multiple development branches. All modifications intended for the current major release line must be made to the <code>master</code> branch and must follow the guidelines detailed in this document.</p>
+<p>At each new <em>semver-patch</em>, a Release tag is cut (e.g. <code>v2.0.0</code>, <code>v2.0.1</code>, <code>v2.1.0</code>, etc).</p>
+<pre><code>          (dev branches)         (dev branches)
+          ⇗  ⇗      ⇘  ⇘       ⇗  ⇗      ⇘  ⇘
+  -----------------------------------------------------------------&gt; master
+      ⇣          ⇣          ⇣          ⇣         ⇣          ⇣
+  tag:v2.0.0 tag:v2.1.0 tag:v2.2.0 tag:v3.0.0 tag:v3.1.0 tag:v3.2.0  (releases)
+</code></pre><p>Before a new <em>semver-major</em>, <code>master</code> is branched for maintenance of the prior major (e.g. <code>v1.x</code>, <code>v2.x</code>).</p>
+<pre><code>                                        v2.x ------&gt; maintenance
+                                       ⇗
+  -------------------------------------------------&gt; master
+       ⇣          ⇣          ⇣         ⇣
+   tag:v2.0.0 tag:v2.1.0 tag:v2.2.0 tag:v3.0.0
+</code></pre><p>Modifications to maintenance branches are limited to bug fixes, with priority given to changes that address specific security vulnerabilities. Oversight of the maintenance branches belongs to the Long Term Support (LTS) Working Group. The LTS Working Group will establish policies for landing Pull Requests into maintenance branches.</p>
+<p>The LTS Working Group may choose to use its own tags to identify LTS Release Candidates and LTS Releases and can choose to create additional maintenance branches if need arises. The LTS Working Group may also choose to use extended version metadata for tracking changes that land within maintenance branches.</p>
+<p>Additionally there are branches for stable release lines prior to 1.0 of minor versions. Example: <code>v0.8.x</code>, <code>v0.10.x</code>, <code>v0.12.x</code>.</p>
+<h3>Release Versioning<a name="release-versioning" class="anchor" href="#release-versioning"></a></h3><h4>Patches<a name="patches" class="anchor" href="#patches"></a></h4><p>Patch releases are defined as bug, performance, and security fixes. They do not change or add any public interfaces. They do not change the expected behavior of a given interface. They are meant to correct behavior when it doesn&#39;t match the documentation, without also introducing a change that makes seamless upgrades impossible.</p>
+<h4>Minors<a name="minors" class="anchor" href="#minors"></a></h4><p>Minors are the addition and refinements of APIs or subsystems. They do not change APIs or introduce backwards compatible breaking changes. These are mostly completely additive releases.</p>
+<h4>Majors<a name="majors" class="anchor" href="#majors"></a></h4><p>Majors contain changes in behavior that could potentially break code that worked in prior releases.</p>
+<h3>Release Process for Master<a name="release-process-for-master" class="anchor" href="#release-process-for-master"></a></h3><p>Releases should not contain too many code changes and if the rate of code changes is high then it should correspond to an increase in the rate of releases. It is expected that there should be about one release per week.</p>
+<p>Master must pass a full CI test run prior to release.</p>
+<p>If master contains changes which are tagged <em>semver-minor</em> then the release should bump the minor version otherwise it is a patch release.</p>
+<h2>Long Term Support Working Group Roadmap<a name="long-term-support-working-group-roadmap" class="anchor" href="#long-term-support-working-group-roadmap"></a></h2><p>The LTS WG is expected to establish a regular and predictable cadence of LTS Releases. To this end, the LTS WG must maintain and regularly publish a clear Roadmap that outlines the priorities and milestones for upcoming LTS Releases. The goal of the Roadmap is to help guide the project&#39;s evolution as opposed to constraining it.</p>
+<h2>Issues Workflow<a name="issues-workflow" class="anchor" href="#issues-workflow"></a></h2><p>The tracking and management of issues is still an open discussion. See <a href="javascript:if(confirm(%27https://github.com/jasnell/dev-policy/issues/9  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/jasnell/dev-policy/issues/9%27" tppabs="https://github.com/jasnell/dev-policy/issues/9">https://github.com/jasnell/dev-policy/issues/9</a> and <a href="javascript:if(confirm(%27https://github.com/jasnell/dev-policy/issues/8  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/jasnell/dev-policy/issues/8%27" tppabs="https://github.com/jasnell/dev-policy/issues/8">https://github.com/jasnell/dev-policy/issues/8</a></p>
+<h2>Stability Policy<a name="stability-policy" class="anchor" href="#stability-policy"></a></h2><p>The most important consideration in every code change is the impact it will have, positive or negative, on the ecosystem (modules and applications). To this end, all Collaborators must work collectively to ensure that changes do not needlessly break backwards compatibility, introduce performance or functional regressions, or negatively impact the usability of the Project on any of the platforms officially targeted for support by the Project. The TSC is responsible for determining the list of supported platforms.</p>
+<p>When discussing stability, it is important to first review Node.js&#39; layered architecture:</p>
+<pre><code>   +---------------------------------------------------+
+   |          Module and Application Ecosystem         |
+   +---------------------------------------------------+
+        |                |            |              |
+        |                | +----------------------+  |
+        |                | |  Binary Abstraction  |  |
+        |                | |        Layer         |  |
+        |                | +----------------------+  |
+        |                |     |             |       |
+   +----------------+    |     |             |       /
+   |  Node.js Core  |    |     |             |      /
+   |  Library API   |    |     |             |     /
+   +----------------+    |     |             |    /
+   |     js impl    |    |     |             |   /
+   +----------------+    |     |             |  /
+            |            |     |             | /
+   +--------------------------------------+  |/
+   | Node.js Application Binary Interface |  |
+   +--------------------------------------|  |
+   |              C/C++ impl              |  |
+   +--------------------------------------+  |
+                      |                      |
+        +---------------------------------------+
+        | Dependencies: v8, libuv, openssl, etc |
+        +---------------------------------------+
+</code></pre><p>Node.js currently builds on top of several key dependencies including the V8 JavaScript engine, libuv, openssl and others. The Node.js Application Binary Interface provides access to functionality central to how Node.js operates. The Node.js Core Library is the primary interface through which most Modules and Applications built on top of Node perform I/O operations, manipulate data, access the network, etc. Some modules and applications choose to go beyond the Core Library and bind directly to the Application Binary Interface and dependencies to perform more advanced operations. An optional Binary abstraction layer is used to buffer module and application developers from changes in the Application Binary Interface and Dependencies.</p>
+<p>Due to the existing layering, modules and applications are sensitive not only to changes in the Core Library API, but the Application Binary Interface and dependencies as well.</p>
+<p>Any API <em>addition</em> to either the Node.js Core Library API or Application Binary Interface must result in a <em>semver-minor</em> version increase.</p>
+<p>Any <em>backwards incompatible</em> change to either the Node.js Core Library API or Application Binary Interface must result in a <em>semver-major</em> version increase.</p>
+<p>Any Modification to the ABI, dependencies or Native abstractions that require a developer to <em>modify code</em> and then recompile is considered a backwards incompatible change that must result in a <em>semver-major</em> version increase.</p>
+<p>Reversions of any changes landed into <code>master</code> are to be handled just like any other type of pre- or post-release modification.</p>
+<h3>Implicit vs. Explicit API Stability<a name="implicit-vs-explicit-api-stability" class="anchor" href="#implicit-vs-explicit-api-stability"></a></h3><p>The Node.js Core Library API, Application Binary Interface and Binary Abstraction layer each expose methods, events, behaviors and default values that together comprise the implicit Node.js &quot;Public API&quot;. This &quot;Public API&quot; is used  by application and module developers and changes will have direct impact on the Community.</p>
+<p>Methods exposed by the API can have either strongly or weakly typed input parameters and return values. Methods may also throw any number of exceptions or trigger certain sequences of events or side effects. When such types, exceptions, events or side-effects are <em>documented</em>, they become part of the Node.js <em>Explicit API</em>.</p>
+<p>Likewise, when the ordering of events triggered by Node.js, the default values of optional input parameters and constants, or the type and structure of return values and event payloads are <em>documented</em>, they become part of the <em>Explicit API</em>.</p>
+<p><em>Undocumented</em> types, return values, exceptions, events and side effects are considered to be part of the <em>Implicit API</em>.</p>
+<p>The ecosystem of application and module developers must be able to rely on the stability of both <em>Implicit</em> and <em>Explicit</em> APIs as much as possible. Changes to these APIs that are made prior to their inclusion within a Release are generally straightforward and can be made with appropriate review. Changes after the APIs have been included within a Release, however, require Collaborators to be much more careful.</p>
+<p>Backwards incompatible changes to <em>Explicit</em> APIs that have previously been included in a Release <em>must</em> follow a clear and predictable deprecation process in which the existing documented API: (a) is clearly marked for deprecation and (b) can change only after the next <em>semver-major</em> version increase.</p>
+<p>Backwards incompatible changes to <em>Implicit</em> APIs that have been included in a Release <em>should</em> be handled the same as <em>Explicit</em> API changes. However, exception to this rule can be allowed if the proposed change can be reliably demonstrated to have minimal impact <em>in practice</em> and either:</p>
+<p>  (a) the proposed change reconciles <em>documented</em> behavior with <em>implemented</em> behavior (i.e. the documentation needs to be updated to accurately reflect how the code actually works);</p>
+<p>  (b) it is clear that the Implicit API being modified was originally intended for internal use as part of the underlying implementation (as opposed to being targeted at developers); or</p>
+<p>  (c) it can be demonstrated that the Implicit API never worked correctly to begin with.</p>
+<p>That said, changes to any of the APIs should not be made lightly as there is currently no reliable means of determining in advance the impact any change may have on existing applications and modules. Collaborators must use their best judgement to determine whether any given change is &quot;technically backwards incompatible but in practice should not be&quot;, then approach landing the change accordingly.</p>
+<p>There should never be any API change in a maintenance branch unless the change is required to address a critical security vulnerability.  </p>
+<h3>Platform Stability<a name="platform-stability" class="anchor" href="#platform-stability"></a></h3><p>The Platforms supported by the Node.js project are generally divided into three distinct categories: <em>Supported</em>, <em>Experimental</em> and <em>Deprecated</em>.</p>
+<p><em>Supported</em> platforms consist of those with support in the <code>master</code> branch. For every release, the build must complete successfully and pass a full CI test run on every <em>Supported</em> platform.</p>
+<p><em>Experimental</em> Platforms consist of those for which there is active ongoing development to port Node.js to the platform but functionality may not yet be feature complete or fully operational. Support for experimental platforms may not yet have been committed to <code>master</code> and might be done in a Development branch or separate repository entirely.</p>
+<p><em>Supported</em> and <em>Experimental</em> Platforms remain active so long as there are Collaborators actively maintaining support for them.</p>
+<p><em>Deprecated</em> Platforms consist of platforms for which: (a) there is no active development, (b) there are no Collaborators actively maintaining support, or (c) it is no longer feasible or practical to continue supporting.</p>
+<p>It is possible for build and CI infrastructure updates to cause failures in existing <em>Supported</em> platforms. This can happen, for instance, when an updated dependency forces the build to use an updated toolchain that is not yet (or no longer) supported on a given platform. In such cases, Collaborators should be notified  in advance that such changes are expected so that appropriate fixes on affected platforms can be planned and landed. Effort should be made to ensure that the build and CI infrastructure continues to work on all currently <em>Supported</em> platforms. Prior to the next release, however, if it becomes clear that the build cannot be fixed on a particular platform, it can be moved to <em>Deprecated</em> status and landing the changes would require a <em>semver-major</em> version increase.</p>
+<p>Support for <em>Deprecated</em> Platforms may be removed entirely after the next <em>semver-major</em> version increase.</p>
+<p>Note that the option to deprecate an existing supported platform should not be taken lightly. Given that deprecation of the platform would require a <em>semver-major</em> version increase, such changes must be reviewed and approved by the TSC.</p>
+<h3>Dependency Stability<a name="dependency-stability" class="anchor" href="#dependency-stability"></a></h3><h4>JavaScript Support (V8)<a name="javascript-support-v8" class="anchor" href="#javascript-support-v8"></a></h4><p>Node.js will adopt new V8 releases as quickly as practically feasible. For Releases, the version of V8 shipped must be fully functional with no regressions on all <em>Supported</em> platforms.</p>
+<p>When V8 ships a breaking change to their C++ API that can be handled by the binary abstraction layer there will be a <em>semver-minor</em> version increase.</p>
+<p>When V8 ships a breaking change to their C++ API that cannot be handled by the binary abstract layer there will be a <em>semver-major</em> version increase.</p>
+<p>When new features in the JavaScript language are introduced by V8, there will be a <em>semver-minor</em> version increase. TC39 has stated clearly that no backwards incompatible changes will be made to the language so it is appropriate to increase the <em>minor</em> rather than the <em>major</em>.</p>
+<p>With a few notable exceptions, the Node.js Core Library API is largely built around ES5 Language features. While there are currently no plans to do so, it is possible for post-ES5 JavaScript language features to be introduced into the Core Library API in the future. If such changes can be introduced in a manner that is transparent to module and application developers and will not cause existing applications to break, the changes can be landed after sufficient review with either a <em>semver-patch</em> or <em>semver-minor</em> version increase (depending on whether the change introduces new APIs). However, if the changes cause a backwards incompatible change to the existing API or could cause existing modules and applications to break the change must be reviewed and approved by the TSC and must result in a <em>semver-major</em> version increase.</p>
+<h4>Other dependencies<a name="other-dependencies" class="anchor" href="#other-dependencies"></a></h4><p>Other dependencies such as OpenSSL, libuv and http-parser are handled similarly.</p>
+<p>Node.js will continue to adopt new dependency releases as often as practically feasible.</p>
+<p>When a dependency ships a breaking change to their API, if that change can be abstracted by the Node.js Application Binary Interface such that module and application developers can be isolated from the change without breaking existing applications, there will be a <em>semver-minor</em> version increase.</p>
+<p>When a dependency ships a breaking change to their API that cannot be abstracted by the Node.js Application Binary Interface, there will be a <em>semver-major</em> version increase.</p>
+<p>When dependencies introduce additional functionality that does not break backwards compatibility in any way, there will be a <em>semver-minor</em> version increase.</p>
+<h4>npm<a name="npm" class="anchor" href="#npm"></a></h4><p>While the <code>npm</code> utility is shipped as part of Node.js, it is not a functional dependency in the same way as V8, OpenSSL or libuv. Specifically, <code>npm</code> is not considered part of the Node.js API. As a general rule, <em>semver-patch</em> and <em>semver-minor</em> updates in <code>npm</code> may be introduced into Node.js with only a <em>semver-patch</em> version increase. If there is a <em>semver-major</em> update in <code>npm</code>, such as when <code>npm</code> rolls over to version 3.0.0, then a <em>semver-major</em> version increase should occur in Node.js. However, the TSC may alter this policy in the future depending on the nature and scope of changes expected in newer versions of <code>npm</code>.</p>
+<h2>Working Groups<a name="working-groups" class="anchor" href="#working-groups"></a></h2><p>Working Groups are autonomous groups of Collaborators chartered by the TSC to oversee specific aspects of the Project. Working groups can be formed at any time but must be ratified by the TSC.</p>
+<p>Every Working Group has a charter that details its area of responsibility. Once approved by the TSC, the Working Group becomes solely responsible for items detailed in that charter.</p>
+<p>When applicable, the charter should indicate the conditions under which the Working Group&#39;s activity can be considered to be complete and the WG can be dissolved. A Working Group can, at any time, request that the TSC dissolve the Working Group by opening an issue requesting dissolution with the <em>tsc-agenda</em> tag.</p>
+<p>The TSC may revoke the Working Groups charter at any time following the decision making process defined in the TSC Charter.</p>
+<p>Proposals to create a new Working Group should be made either by opening an issue or submitting a PR with the draft charter for the new Working Group, then putting that on the TSC agenda using the <em>tsc-agenda</em> tag.</p>
+<p><a id="developers-certificate-of-origin"></a></p>
+<h2>Developer&#39;s Certificate of Origin 1.1<a name="developer-s-certificate-of-origin-1-1" class="anchor" href="#developer-s-certificate-of-origin-1-1"></a></h2><p>By making a contribution to this project, I certify that:</p>
+<ul>
+<li><p>(a) The contribution was created in whole or in part by me and I
+have the right to submit it under the open source license
+indicated in the file; or</p>
+</li>
+<li><p>(b) The contribution is based upon previous work that, to the best
+of my knowledge, is covered under an appropriate open source
+license and I have the right under that license to submit that
+work with modifications, whether created in whole or in part
+by me, under the same open source license (unless I am
+permitted to submit under a different license), as indicated
+in the file; or</p>
+</li>
+<li><p>(c) The contribution was provided directly to me by some other
+person who certified (a), (b) or (c) and I have not modified
+it.</p>
+</li>
+<li><p>(d) I understand and agree that this project and the contribution
+are public and that a record of the contribution (including all
+personal information I submit with it, including my sign-off) is
+maintained indefinitely and may be redistributed consistent with
+this project or the open source license(s) involved.</p>
+</li>
+</ul>
+<h2>A Few Open Questions<a name="a-few-open-questions" class="anchor" href="#a-few-open-questions"></a></h2><ol>
+<li>What about things like http_parser and libuv? Does it make sense to see about bringing each into the foundation as their own projects?</li>
+<li>What about all the other repos under iojs/<em> and joyent/</em>, which of those will move over to the foundation?</li>
+</ol>
+<h2>Notes<a name="notes" class="anchor" href="#notes"></a></h2><ol>
+<li><p>The existing Node.js Workflow requires that all PR&#39;s can only be landed using a specific Jenkin&#39;s &quot;node-accept-pull-request&quot; job. This document requires that all PR&#39;s must be tested to ensure that all tests pass but it does not go into specific detail on the CI process. It is expected that the TSC will establish the specific step-by-step process by which Pull Requests must be landed.</p>
+</li>
+<li><p>The existing Node.js Workflow recently introduced the notion of &quot;Priority&quot; and &quot;Status&quot; tags for Issues. For instance, the <em>P-0</em> tag can be used to label issues that break node on at least one supported platform and need to be resolved as quickly as possible. The intent of the Priority tags is to assist in the triage of issues and help Collaborators determine which issues to work on first. The io.js project currently does not have a similar mechanism and feedback from io.js participants has been that such a Priority tagging system may not be of use (and could be actively harmful) given the way they&#39;ve chosen to handle issues.</p>
+</li>
+</ol>
+
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="../../../static/images/lfcp.png" tppabs="https://nodejs.org/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="javascript:if(confirm(%27https://nodejs.org/static/documents/trademark-policy.pdf  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/static/documents/trademark-policy.pdf%27" tppabs="https://nodejs.org/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="../../../static/css/prism-tomorrow.css" tppabs="https://nodejs.org/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='../../../static/js/modernizr.custom.js'/*tpa=https://nodejs.org/static/js/modernizr.custom.js*/;
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>

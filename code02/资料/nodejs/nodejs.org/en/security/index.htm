@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Security | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/security/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="../styles.css" tppabs="https://nodejs.org/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../www.google-analytics.com/analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="javascript:if(confirm(%27https://nodejs.org/en  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en%27" tppabs="https://nodejs.org/en" id="logo">
+              <img src="../../static/images/logos/nodejs-new-white-pantone.png" tppabs="https://nodejs.org/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="../index.htm" tppabs="https://nodejs.org/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="../about/index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="../download/index.htm" tppabs="https://nodejs.org/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="../docs/index.htm" tppabs="https://nodejs.org/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="../get-involved/index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li class="active">
+                            <a href="index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="../blog/index.htm" tppabs="https://nodejs.org/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container">
+
+            <article>
+                <a class="edit-link" href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/security.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/security.md%27" tppabs="https://github.com/nodejs/nodejs.org/edit/master/locale/en/security.md">Edit on GitHub</a> <h1>Security<a name="security" class="anchor" href="#security"></a></h1><h2>Reporting a Bug<a name="reporting-a-bug" class="anchor" href="#reporting-a-bug"></a></h2><p>All security bugs in Node.js are taken seriously and should be reported by emailing <a href="javascript:if(confirm(%27https://nodejs.org/cdn-cgi/l/email-protection  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/cdn-cgi/l/email-protection#2e5d4b4d5b5c475a576e40414a4b445d00415c49%27" tppabs="https://nodejs.org/cdn-cgi/l/email-protection#2e5d4b4d5b5c475a576e40414a4b445d00415c49"><span class="__cf_email__" data-cfemail="106375736562796469507e7f74757a633e7f6277">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>.
+This will be delivered to a subset of the core team who handle security issues.</p>
+<p>Your email will be acknowledged within 24 hours, and you’ll receive a more detailed response to your email within 48
+hours indicating the next steps in handling your report.</p>
+<p>After the initial reply to your report, the security team will endeavor to keep you informed of the progress being made
+towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
+These updates will be sent at least every five days, in practice, this is more likely to be every 24-48 hours.</p>
+<p>Security bugs in third party modules should be reported to their respective maintainers and can also be coordinated
+through the <a href="javascript:if(confirm(%27https://nodesecurity.io/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodesecurity.io/%27" tppabs="https://nodesecurity.io/">Node Security Project</a>.</p>
+<p>Thank you for improving the security of Node.js. Your efforts and responsible disclosure are greatly appreciated and
+will be acknowledged.</p>
+<h2>Disclosure Policy<a name="disclosure-policy" class="anchor" href="#disclosure-policy"></a></h2><p>Here is the security disclosure policy for Node.js</p>
+<ul>
+<li><p>The security report is received and is assigned a primary handler. This person will coordinate the fix and release
+process. The problem is confirmed and a list of all affected versions is determined. Code is audited to find any
+potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not
+committed to the public repository but rather held locally pending the announcement.</p>
+</li>
+<li><p>A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and  Exposures (CVE®))
+is requested for the vulnerability.</p>
+</li>
+<li><p>On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
+the public repository and new builds are deployed to nodejs.org. Within 6 hours of the mailing list being notified, a
+copy of the advisory will be published on the Node.js blog.</p>
+</li>
+<li><p>Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on
+the severity of the bug or difficulty in applying a fix.</p>
+</li>
+<li><p>This process can take some time, especially when coordination is required with maintainers of other projects. Every
+effort will be made to handle the bug in as timely a manner as possible, however, it’s important that we follow the
+release process above to ensure that the disclosure is handled in a consistent manner.</p>
+</li>
+</ul>
+<h2>Receiving Security Updates<a name="receiving-security-updates" class="anchor" href="#receiving-security-updates"></a></h2><p>Security notifications will be distributed via the following methods.</p>
+<ul>
+<li><a href="javascript:if(confirm(%27https://groups.google.com/group/nodejs-sec  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://groups.google.com/group/nodejs-sec%27" tppabs="https://groups.google.com/group/nodejs-sec">https://groups.google.com/group/nodejs-sec</a></li>
+<li><a href="../blog/index.htm" tppabs="https://nodejs.org/en/blog">https://nodejs.org/en/blog</a></li>
+</ul>
+<h2>Comments on this Policy<a name="comments-on-this-policy" class="anchor" href="#comments-on-this-policy"></a></h2><p>If you have suggestions on how this process could be improved please submit a <a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org%27" tppabs="https://github.com/nodejs/nodejs.org">pull request</a>
+or email <a href="javascript:if(confirm(%27https://nodejs.org/cdn-cgi/l/email-protection  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/cdn-cgi/l/email-protection#0f7c6a6c7a7d667b764f61606b6a657c21607d68%27" tppabs="https://nodejs.org/cdn-cgi/l/email-protection#0f7c6a6c7a7d667b764f61606b6a657c21607d68"><span class="__cf_email__" data-cfemail="5526303620273c212c153b3a31303f267b3a2732">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> to discuss.</p>
+
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="../../static/images/lfcp.png" tppabs="https://nodejs.org/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="javascript:if(confirm(%27https://nodejs.org/static/documents/trademark-policy.pdf  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/static/documents/trademark-policy.pdf%27" tppabs="https://nodejs.org/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="../../static/css/prism-tomorrow.css" tppabs="https://nodejs.org/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='../../static/js/modernizr.custom.js'/*tpa=https://nodejs.org/static/js/modernizr.custom.js*/;
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

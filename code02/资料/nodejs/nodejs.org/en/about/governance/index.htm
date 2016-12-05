@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Project Governance | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/about/governance/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="../../styles.css" tppabs="https://nodejs.org/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../www.google-analytics.com/analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="javascript:if(confirm(%27https://nodejs.org/en  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en%27" tppabs="https://nodejs.org/en" id="logo">
+              <img src="../../../static/images/logos/nodejs-new-white-pantone.png" tppabs="https://nodejs.org/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="../../index.htm" tppabs="https://nodejs.org/en/">Home</a>
+                    </li>
+                        <li class="active">
+                            <a href="../index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="../../download/index.htm" tppabs="https://nodejs.org/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="../../docs/index.htm" tppabs="https://nodejs.org/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="../../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="../../get-involved/index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="../../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="../../blog/index.htm" tppabs="https://nodejs.org/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                                <li>
+                                            <a href="../index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                                </li>
+                                <li class="active">
+                                            <a href="index.htm" tppabs="https://nodejs.org/en/about/governance/">Governance</a>
+                                </li>
+                                <li>
+                                            <a href="../working-groups/index.htm" tppabs="https://nodejs.org/en/about/working-groups/">Working Groups</a>
+                                </li>
+                                <li>
+                                            <a href="../releases/index.htm" tppabs="https://nodejs.org/en/about/releases/">Releases</a>
+                                </li>
+                                <li>
+                                            <a href="../resources/index.htm" tppabs="https://nodejs.org/en/about/resources/">Resources</a>
+                                </li>
+                                <li>
+                                            <a href="../../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                                </li>
+                                <li>
+                                            <a href="../../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                                </li>
+                                <li>
+                                            <a href="../trademark/index.htm" tppabs="https://nodejs.org/en/about/trademark/">Trademark</a>
+                                </li>
+                </ul>
+            </aside>
+
+            <article>
+                <a class="edit-link" href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/governance.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/governance.md%27" tppabs="https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/governance.md">Edit on GitHub</a> <h1>Project Governance<a name="project-governance" class="anchor" href="#project-governance"></a></h1><h2>Technical Steering Committee<a name="technical-steering-committee" class="anchor" href="#technical-steering-committee"></a></h2><p>The project is jointly governed by a Technical Steering Committee (TSC)
+which is responsible for high-level guidance of the project.</p>
+<p>The TSC has final authority over this project including:</p>
+<ul>
+<li>Technical direction</li>
+<li>Project governance and process (including this policy)</li>
+<li>Contribution policy</li>
+<li>GitHub repository hosting</li>
+<li>Conduct guidelines</li>
+<li>Maintaining the list of additional Collaborators</li>
+</ul>
+<p>Initial membership invitations to the TSC were given to individuals who
+had been active contributors, and who have significant
+experience with the management of the project. Membership is
+expected to evolve over time according to the needs of the project.</p>
+<p>For the current list of TSC members, see the project
+<a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/README.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee%27" tppabs="https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee">README.md</a>.</p>
+<h2>Collaborators<a name="collaborators" class="anchor" href="#collaborators"></a></h2><p>The <a href="javascript:if(confirm(%27https://github.com/nodejs/node  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node%27" tppabs="https://github.com/nodejs/node">nodejs/node</a> GitHub repository is
+maintained by the TSC and additional Collaborators who are added by the
+TSC on an ongoing basis.</p>
+<p>Individuals making significant and valuable contributions are made
+Collaborators and given commit-access to the project. These
+individuals are identified by the TSC and their addition as
+Collaborators is discussed during the weekly TSC meeting.</p>
+<p><em>Note:</em> If you make a significant contribution and are not considered
+for commit-access, log an issue or contact a TSC member directly and it
+will be brought up in the next TSC meeting.</p>
+<p>Modifications of the contents of the nodejs/node repository are made on
+a collaborative basis. Anybody with a GitHub account may propose a
+modification via pull request and it will be considered by the project
+Collaborators. All pull requests must be reviewed and accepted by a
+Collaborator with sufficient expertise who is able to take full
+responsibility for the change. In the case of pull requests proposed
+by an existing Collaborator, an additional Collaborator is required
+for sign-off. Consensus should be sought if additional Collaborators
+participate and there is disagreement around a particular
+modification. See <em>Consensus Seeking Process</em> below for further detail
+on the consensus model used for governance.</p>
+<p>Collaborators may opt to elevate significant or controversial
+modifications, or modifications that have not found consensus to the
+TSC for discussion by assigning the <strong><em>tsc-agenda</em></strong> tag to a pull
+request or issue. The TSC should serve as the final arbiter where
+required.</p>
+<p>For the current list of Collaborators, see the project
+<a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/README.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/README.md#current-project-team-members%27" tppabs="https://github.com/nodejs/node/blob/master/README.md#current-project-team-members">README.md</a>.</p>
+<p>A guide for Collaborators is maintained in
+<a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md%27" tppabs="https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md">COLLABORATOR_GUIDE.md</a>.</p>
+<h2>TSC Membership<a name="tsc-membership" class="anchor" href="#tsc-membership"></a></h2><p>TSC seats are not time-limited.  There is no fixed size of the TSC.
+However, the expected target is between 6 and 12, to ensure adequate
+coverage of important areas of expertise, balanced with the ability to
+make decisions efficiently.</p>
+<p>There is no specific set of requirements or qualifications for TSC
+membership beyond these rules.</p>
+<p>The TSC may add additional members to the TSC by a standard TSC motion.</p>
+<p>A TSC member may be removed from the TSC by voluntary resignation, or by
+a standard TSC motion.</p>
+<p>Changes to TSC membership should be posted in the agenda, and may be
+suggested as any other agenda item (see &quot;TSC Meetings&quot; below).</p>
+<p>No more than 1/3 of the TSC members may be affiliated with the same
+employer.  If removal or resignation of a TSC member, or a change of
+employment by a TSC member, creates a situation where more than 1/3 of
+the TSC membership shares an employer, then the situation must be
+immediately remedied by the resignation or removal of one or more TSC
+members affiliated with the over-represented employer(s).</p>
+<h2>TSC Meetings<a name="tsc-meetings" class="anchor" href="#tsc-meetings"></a></h2><p>The TSC meets weekly on a Google Hangout On Air. The meeting is run by
+a designated moderator approved by the TSC. Each meeting should be
+published to YouTube.</p>
+<p>Items are added to the TSC agenda which are considered contentious or
+are modifications of governance, contribution policy, TSC membership,
+or release process.</p>
+<p>The intention of the agenda is not to approve or review all patches.
+That should happen continuously on GitHub and be handled by the larger
+group of Collaborators.</p>
+<p>Any community member or contributor can ask that something be added to
+the next meeting&#39;s agenda by logging a GitHub Issue. Any Collaborator,
+TSC member or the moderator can add the item to the agenda by adding
+the <strong><em>tsc-agenda</em></strong> tag to the issue.</p>
+<p>Prior to each TSC meeting, the moderator will share the Agenda with
+members of the TSC. TSC members can add any items they like to the
+agenda at the beginning of each meeting. The moderator and the TSC
+cannot veto or remove items.</p>
+<p>The TSC may invite persons or representatives from certain projects to
+participate in a non-voting capacity. These invitees currently are:</p>
+<ul>
+<li>A representative from <a href="javascript:if(confirm(%27https://github.com/node-forward/build  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/node-forward/build%27" tppabs="https://github.com/node-forward/build">build</a>
+chosen by that project.</li>
+</ul>
+<p>The moderator is responsible for summarizing the discussion of each
+agenda item and sending it as a pull request after the meeting.</p>
+<h2>Consensus Seeking Process<a name="consensus-seeking-process" class="anchor" href="#consensus-seeking-process"></a></h2><p>The TSC follows a
+<a href="javascript:if(confirm(%27http://en.wikipedia.org/wiki/Consensus-seeking_decision-making  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://en.wikipedia.org/wiki/Consensus-seeking_decision-making%27" tppabs="http://en.wikipedia.org/wiki/Consensus-seeking_decision-making">Consensus Seeking</a>
+decision making model.</p>
+<p>When an agenda item has appeared to reach a consensus, the moderator
+will ask &quot;Does anyone object?&quot; as a final call for dissent from the
+consensus.</p>
+<p>If an agenda item cannot reach a consensus, a TSC member can call for
+either a closing vote or a vote to table the issue to the next
+meeting. The call for a vote must be approved by a majority of the TSC
+or else the discussion will continue. Simple majority wins.</p>
+
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="../../../static/images/lfcp.png" tppabs="https://nodejs.org/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="javascript:if(confirm(%27https://nodejs.org/static/documents/trademark-policy.pdf  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/static/documents/trademark-policy.pdf%27" tppabs="https://nodejs.org/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="../../../static/css/prism-tomorrow.css" tppabs="https://nodejs.org/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='../../../static/js/modernizr.custom.js'/*tpa=https://nodejs.org/static/js/modernizr.custom.js*/;
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>

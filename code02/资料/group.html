@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            font-family: '微软雅黑';
+        }
+
+        .box {
+            width: 1200px;
+            height: 1000px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box ul{
+            overflow: hidden;
+        }
+        li {
+            list-style: none;
+            width: 65px;
+            height: 50px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            background: #ccc;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        #btn{
+            width: 100px;
+            height: 40px;
+            background: red;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            left: 550px;
+            top: -50px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+        }
+        .current {
+            background: red;
+            color: #fff;
+        }
+        .name{
+            width: 300px;
+            font-size: 35px;
+            margin: 20px auto;
+        }
+        .name b{
+            color: red;
+            text-align: center;
+            display: inline-block;
+            width: 110px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span id="btn">审判</span>
+    <ul>
+        <li>李成娟</li>
+        <li>部文旭</li>
+        <li>李娜</li>
+        <li>曾国财</li>
+        <li>程蔡霞</li>
+        <li>卢宏伟</li>
+        <li>刁文飞</li>
+        <li>刘美丽</li>
+        <li>吴静如</li>
+        <li>殷涛</li>
+        <li>楚玉晗</li>
+        <li>王志强</li>
+        <li>王婷</li>
+        <li>邹宣莉</li>
+        <li>吕亚茹</li>
+        <li>吕太聪</li>
+        <li>王秀琪</li>
+        <li>张焱</li>
+        <li>禹航</li>
+        <li>袁哲</li>
+        <li>李晓宁</li>
+        <li>李飞</li>
+        <li>朱磊</li>
+        <li>李延雯</li>
+        <li>刘晓君</li>
+        <li>成欢</li>
+        <li>耿晓伟</li>
+        <li>马爽</li>
+        <li>王宇</li>
+        <li>王诚</li>
+        <li>郝翠芳</li>
+        <li>葛丹</li>
+        <li>邹聪</li>
+        <li>杨溪美</li>
+        <li>陈雪玉</li>
+        <li>卜繁鹏</li>
+        <li>伍阿荣</li>
+        <li>程刚</li>
+        <li>吕闫彬</li>
+        <li>严娇</li>
+        <li>李敬婷</li>
+        <li>赵浩然</li>
+        <li>盛玲玲</li>
+        <li>毛爱华</li>
+        <li>付墙</li>
+        <li>王小龙</li>
+        <li>苏冠南</li>
+        <li>陈珊珊</li>
+        <li>韩静</li>
+        <li>贾雨娇</li>
+        <li>白玉芬</li>
+        <li>苗家豪</li>
+        <li>王金龙</li>
+        <li>陈冀川</li>
+        <li>沈珊珊</li>
+        <li>张文</li>
+        <li>陈佳兵</li>
+        <li>苏镇</li>
+        <li>田玉平</li>
+        <li>毕晓宇</li>
+        <li>冯晓磊</li>
+        <li>张宏昌</li>
+        <li>孔召焕</li>
+        <li>左强</li>
+        <li>林杨阳</li>
+        <li>夏保超</li>
+        <li>张皓</li>
+        <li>陈莹莹</li>
+        <li>董冰</li>
+        <li>周红涛</li>
+        <li>董凯</li>
+        <li>闫德浩</li>
+        <li>侯园园</li>
+        <li>王玮</li>
+        <li>张岱麒</li>
+        <li>姚超</li>
+        <li>王东</li>
+        <li>王佩</li>
+        <li>肖志华</li>
+        <li>马永昌</li>
+        <li>胥铁成</li>
+        <li>张冠鲁</li>
+        <li>钱刚</li>
+        <li>孙世豪</li>
+        <li>郭茜</li>
+        <li>郑文宇</li>
+        <li>周国庆</li>
+        <li>汪俊庆</li>
+        <li>周京威</li>
+        <li>张廷军</li>
+        <li>郑爽</li>
+        <li>刘馨</li>
+        <li>吕鑫涛</li>
+        <li>高雪</li>
+        <li>陈明明</li>
+        <li>王子祥</li>
+        <li>陈娜</li>
+        <li>多梦微</li>
+        <li>侯磊</li>
+        <li>赵海欢</li>
+        <li>任阳</li>
+        <li>王茜玥</li>
+        <li>程传航</li>
+        <li>徐晓辉</li>
+        <li>狄兆龙</li>
+        <li>闫瑞骏</li>
+        <li>赵俊凯</li>
+        <li>周亚鹏</li>
+        <li>顾薇</li>
+        <li>严爽</li>
+        <li>王国伟</li>
+        <li>王雪萍</li>
+        <li>张凯</li>
+        <li>张延超</li>
+        <li>罗芬</li>
+        <li>孙志清</li>
+        <li>马香玉</li>
+        <li>张学峰</li>
+        <li>刘洋</li>
+        <li>王东升</li>
+        <li>陈海文</li>
+        <li>陈召洪</li>
+        <li>江彤</li>
+        <li>范庆龙</li>
+        <li>阿荣</li>
+        <li>娄锴</li>
+        <li>华健</li>
+        <li>易君军</li>
+        <li>龙小宁</li>
+    </ul>
+    <div class="name">恭喜<b>xxx</b>同学</div>
+</div>
+<script>
+    var oUl = document.getElementsByTagName('ul')[0];
+    var oB = document.getElementsByTagName('b')[0];
+    var oBtn = document.getElementById('btn');
+    var ali = oUl.getElementsByTagName('li');
+    var flag = true,
+            timer = null;
+    function dianMing() {
+        flag = !flag;
+        if (flag) {
+            clearInterval(timer);
+        }else{
+            var i = 0;
+            for(var k=0, l = ali.length; k<l; k++){
+                ali[k].className = '';
+            }
+            timer = setInterval(function () {
+                i++;
+                if (i > 129) {
+                    i = 0;
+                }
+                if (ali[i - 1]) {
+                    ali[i - 1].className = '';
+                }
+                ali[i].className = 'current';
+                oB.innerHTML = ali[i].innerHTML;
+            }, 1)
+        }
+    }
+    oBtn.onclick = dianMing;
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

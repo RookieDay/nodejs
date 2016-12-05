@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node v4.3.2 (LTS) | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/blog/release/v4.3.2/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../../www.google-analytics.com/analytics-1.js'/*tpa=http://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="/en" id="logo">
+              <img src="/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="/en/security/">Security</a>
+                        </li>
+                        <li class="active">
+                            <a href="/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container">
+
+            <article>
+                <div class="blogpost-header">
+                    <h1>Node v4.3.2 (LTS)</h1>
+                    <span class="blogpost-meta">by Myles Borins, <time datetime="Wed Mar 02 2016 21:53:44 GMT+0000 (UTC)">2016-03-02</time></span>
+                </div>
+
+                <h3>Notable changes<a name="notable-changes" class="anchor" href="#notable-changes"></a></h3><ul>
+<li><strong>openssl</strong>: Upgrade from 1.0.2f to 1.0.2g (Ben Noordhuis) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5507  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5507%27" tppabs="https://github.com/nodejs/node/pull/5507">#5507</a><ul>
+<li>Fix a double-free defect in parsing malformed DSA keys that may potentially be used for DoS or memory corruption attacks. It is likely to be very difficult to use this defect for a practical attack and is therefore considered low severity for Node.js users. More info is available at <a href="javascript:if(confirm(%27https://www.openssl.org/news/vulnerabilities.html  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.openssl.org/news/vulnerabilities.html#2016-0705%27" tppabs="https://www.openssl.org/news/vulnerabilities.html#2016-0705">CVE-2016-0705</a>.</li>
+<li>Fix a defect that can cause memory corruption in certain very rare cases relating to the internal <code>BN_hex2bn()</code> and <code>BN_dec2bn()</code> functions. It is believed that Node.js is not invoking the code paths that use these functions so practical attacks via Node.js using this defect are <em>unlikely</em> to be possible. More info is available at <a href="javascript:if(confirm(%27https://www.openssl.org/news/vulnerabilities.html  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.openssl.org/news/vulnerabilities.html#2016-0797%27" tppabs="https://www.openssl.org/news/vulnerabilities.html#2016-0797">CVE-2016-0797</a>.</li>
+<li>Fix a defect that makes the <em><a href="javascript:if(confirm(%27https://ssrg.nicta.com.au/projects/TS/cachebleed/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://ssrg.nicta.com.au/projects/TS/cachebleed/%27" tppabs="https://ssrg.nicta.com.au/projects/TS/cachebleed/">CacheBleed Attack</a></em> possible. This defect enables attackers to execute side-channel attacks leading to the potential recovery of entire RSA private keys. It only affects the Intel Sandy Bridge (and possibly older) microarchitecture when using hyper-threading. Newer microarchitectures, including Haswell, are unaffected. More info is available at <a href="javascript:if(confirm(%27https://www.openssl.org/news/vulnerabilities.html  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://www.openssl.org/news/vulnerabilities.html#2016-0702%27" tppabs="https://www.openssl.org/news/vulnerabilities.html#2016-0702">CVE-2016-0702</a>.</li>
+</ul>
+</li>
+</ul>
+<h2>Commits<a name="commits" class="anchor" href="#commits"></a></h2><ul>
+<li>[<a href="javascript:if(confirm(%27https://github.com/nodejs/node/commit/c133797d09  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/commit/c133797d09%27" tppabs="https://github.com/nodejs/node/commit/c133797d09"><code>c133797d09</code></a>] - <strong>deps</strong>: upgrade openssl to 1.0.2g (Ben Noordhuis) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5507  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5507%27" tppabs="https://github.com/nodejs/node/pull/5507">#5507</a></li>
+</ul>
+<p>Windows 32-bit Installer: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-x86.msi  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-x86.msi%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-x86.msi">https://nodejs.org/dist/v4.3.2/node-v4.3.2-x86.msi</a><br>
+Windows 64-bit Installer: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-x64.msi  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-x64.msi%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-x64.msi">https://nodejs.org/dist/v4.3.2/node-v4.3.2-x64.msi</a><br>
+Windows 32-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/win-x86/node.exe  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/win-x86/node.exe%27" tppabs="https://nodejs.org/dist/v4.3.2/win-x86/node.exe">https://nodejs.org/dist/v4.3.2/win-x86/node.exe</a><br>
+Windows 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/win-x64/node.exe  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/win-x64/node.exe%27" tppabs="https://nodejs.org/dist/v4.3.2/win-x64/node.exe">https://nodejs.org/dist/v4.3.2/win-x64/node.exe</a><br>
+Mac OS X 64-bit Installer: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2.pkg  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2.pkg%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2.pkg">https://nodejs.org/dist/v4.3.2/node-v4.3.2.pkg</a><br>
+Mac OS X 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-darwin-x64.tar.gz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-darwin-x64.tar.gz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-darwin-x64.tar.gz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-darwin-x64.tar.gz</a><br>
+Linux 32-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x86.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x86.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x86.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x86.tar.xz</a><br>
+Linux 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x64.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x64.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x64.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-x64.tar.xz</a><br>
+Linux PPC LE 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-ppc64le.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-ppc64le.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-ppc64le.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-ppc64le.tar.xz</a><br>
+SunOS 32-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x86.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x86.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x86.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x86.tar.xz</a><br>
+SunOS 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x64.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x64.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x64.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-sunos-x64.tar.xz</a><br>
+ARMv6 32-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.xz</a><br>
+ARMv7 32-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv7l.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv7l.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv7l.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv7l.tar.xz</a><br>
+ARMv8 64-bit Binary: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-arm64.tar.xz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-arm64.tar.xz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-arm64.tar.xz">https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-arm64.tar.xz</a><br>
+Source Code: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz%27" tppabs="https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz">https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz</a><br>
+Other release files: <a href="javascript:if(confirm(%27https://nodejs.org/dist/v4.3.2/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/dist/v4.3.2/%27" tppabs="https://nodejs.org/dist/v4.3.2/">https://nodejs.org/dist/v4.3.2/</a><br>
+Documentation: <a href="javascript:if(confirm(%27https://nodejs.org/docs/v4.3.2/api/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/docs/v4.3.2/api/%27" tppabs="https://nodejs.org/docs/v4.3.2/api/">https://nodejs.org/docs/v4.3.2/api/</a></p>
+<p>Shasums (GPG signing hash: SHA512, file hash: SHA256):</p>
+<pre><code>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+6380a36500de02a48758f204c1c5931af986d93609cfa06db1f91216bec9a5eb  node-v4.3.2-darwin-x64.tar.gz
+47109a00cac344d80296c195451bb5eee7c21727fcef1594384ddfe1f852957a  node-v4.3.2-darwin-x64.tar.xz
+f532e7cd3886ac9fdc774cc2add0db21483052c966a23aace7c84ec69b91981f  node-v4.3.2-headers.tar.gz
+1f7c9a25c224ff3ce2da0cc858d813ba4359c3b6114e125b5c0abfcc6388a130  node-v4.3.2-headers.tar.xz
+5d86c21d47cad54e3e5d7f36c1323b1e2416efc75e4615dafe35b202b59f26c8  node-v4.3.2-linux-arm64.tar.gz
+606e85821fc88f389a20d4ed4e8e483d1e7627e808dada59931b282768041fb7  node-v4.3.2-linux-arm64.tar.xz
+f8767c0bacc0ed516bfa22802dda573082b5bf463e5ea79a74087272ccb2d1e2  node-v4.3.2-linux-armv6l.tar.gz
+3ea0b359efdb58ba693fdd67382ff0c086ee03899cde78c8aa2f29630c4d79fd  node-v4.3.2-linux-armv6l.tar.xz
+f4d5b9ae277aaec50cdbb735480ec1a04e6e02bd820e2a1fcfa913c0c25f2e3d  node-v4.3.2-linux-armv7l.tar.gz
+4e8cae9f7ad94edcc4eb29c9cfcf9e1e1f4cdd5a40156573d77ab352465a74c7  node-v4.3.2-linux-armv7l.tar.xz
+568b13ae13588853cbf49b7a0772698bf50b6de1168f76cd7a7cd7d7d7ada7c7  node-v4.3.2-linux-ppc64le.tar.gz
+a648fab221101408e5a2a740674686816c5ef26c9d3884c1c444fc14c3040b65  node-v4.3.2-linux-ppc64le.tar.xz
+f307f173a96dff6652bc70d835af0c732864bb09875cf32a0b6ce7d70cebf77d  node-v4.3.2-linux-x64.tar.gz
+4350d0431b49697517c6cca5d66adf5f74eb9101c52f52ae959fa94225822d44  node-v4.3.2-linux-x64.tar.xz
+3c668a2128db3982987c596c028f9ec1d08c6abf63502e24826d40e552f80a8c  node-v4.3.2-linux-x86.tar.gz
+ea45ccb7cf334789727dc5a1d1dfb0fa325e88de0b4a06d211dad6cb57c36e33  node-v4.3.2-linux-x86.tar.xz
+f27eda062619f624d198012735cd996bbe7999715dbed1d6e47f3dbc4529b7a6  node-v4.3.2.pkg
+80fdaa0c54b187d43933336b334b70bcbb79953350510006b07dbaa019929188  node-v4.3.2-sunos-x64.tar.gz
+632d45df9172e54feeba5d5400220f946daf2023c282fb2527a3ff0b1e93be8f  node-v4.3.2-sunos-x64.tar.xz
+04705681dde835c383028bc5bab3cab9d14dd7977e062ac824c2cfaf999f7c43  node-v4.3.2-sunos-x86.tar.gz
+1ad766e22773f3ad9ac2274fbf2f277e24d1234957a358e64bea2ea3ce6fe66a  node-v4.3.2-sunos-x86.tar.xz
+1f92f6d31f7292ce56db57d6703efccf3e6c945948f5901610cefa69e78d3498  node-v4.3.2.tar.gz
+f0c5761a7e4f520ab8793cb2dcabbd7dfd7f5839ce4f2cf79d9d52d1c2da5bca  node-v4.3.2.tar.xz
+49abd7e2855b4d124ad87f48162f6c0f0b26048bef17e1ab8f4ec8144d6914f3  node-v4.3.2-x64.msi
+206ef690925231c9a527aeffc5b2c3d77d2497d91f581a21ba9689bfff9556a1  node-v4.3.2-x86.msi
+606c44c42d17866c017c50c0afadad411d9492ac4281d2431b937f881911614e  win-x64/node.exe
+451a40570099a95488d6438f175813629e0430f87f23c8659bc18dc42494820a  win-x64/node.lib
+e41d283a6e3999dcf90742e97dd5d858a6b9d2b767087a4ef0087c0ed82f9bd9  win-x86/node.exe
+1a6f27f9cee7dc117c51eb1a9c2b1ab336020fd46673b87c4bf2719ef4d2d00c  win-x86/node.lib
+-----BEGIN PGP SIGNATURE-----
+
+iQEcBAEBAgAGBQJW11/yAAoJEJM7AfQLXKlGYDYH/11wCIjqnoJq/mrx++DkwTPH
+/xcS6GPg+M6okP/+12BDxzJ3veMBCXFEe21wKcX68B7vzc9QyfcWR/FDbuu3Jpwl
+nhY0GwA8KqKQwKKl8ecchORWvVCX+b6D6bSSuC1gnO3w0C88usV0MLvdje2WjKdM
+Rg4fy/lzwpNp63yxghwuEwqemxoAt/B/KlJhRqDktcHnsJC4RL8gRr5CXa5E0l81
+ph71mN4nLnES9kYSwb7+XoXsbTXGwRMiWHjjT8s2DP3Tn+WeE1JJzT7JLRRN89KF
+rUnjnEW/76Rb4mk+9W8S30wdBBNEUL0JXAqlEQGANcp5Kdpr1SwwkDoaWSZOprc=
+=hltr
+-----END PGP SIGNATURE-----
+</code></pre>
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>

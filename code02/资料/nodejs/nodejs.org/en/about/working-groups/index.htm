@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Working Groups | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/about/working-groups/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="../../styles.css" tppabs="https://nodejs.org/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../www.google-analytics.com/analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="javascript:if(confirm(%27https://nodejs.org/en  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en%27" tppabs="https://nodejs.org/en" id="logo">
+              <img src="../../../static/images/logos/nodejs-new-white-pantone.png" tppabs="https://nodejs.org/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="../../index.htm" tppabs="https://nodejs.org/en/">Home</a>
+                    </li>
+                        <li class="active">
+                            <a href="../index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="../../download/index.htm" tppabs="https://nodejs.org/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="../../docs/index.htm" tppabs="https://nodejs.org/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="../../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="../../get-involved/index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="../../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="../../blog/index.htm" tppabs="https://nodejs.org/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                                <li>
+                                            <a href="../index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                                </li>
+                                <li>
+                                            <a href="../governance/index.htm" tppabs="https://nodejs.org/en/about/governance/">Governance</a>
+                                </li>
+                                <li class="active">
+                                            <a href="index.htm" tppabs="https://nodejs.org/en/about/working-groups/">Working Groups</a>
+                                </li>
+                                <li>
+                                            <a href="../releases/index.htm" tppabs="https://nodejs.org/en/about/releases/">Releases</a>
+                                </li>
+                                <li>
+                                            <a href="../resources/index.htm" tppabs="https://nodejs.org/en/about/resources/">Resources</a>
+                                </li>
+                                <li>
+                                            <a href="../../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                                </li>
+                                <li>
+                                            <a href="../../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                                </li>
+                                <li>
+                                            <a href="../trademark/index.htm" tppabs="https://nodejs.org/en/about/trademark/">Trademark</a>
+                                </li>
+                </ul>
+            </aside>
+
+            <article>
+                <a class="edit-link" href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/working-groups.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/working-groups.md%27" tppabs="https://github.com/nodejs/nodejs.org/edit/master/locale/en/about/working-groups.md">Edit on GitHub</a> <h1>Working Groups<a name="working-groups" class="anchor" href="#working-groups"></a></h1><p>There are 2 types of Working Groups:</p>
+<ul>
+<li><a href="#top-level-working-groups">Top-Level Working Groups</a></li>
+<li><a href="#core-working-groups">Core Working Groups</a></li>
+</ul>
+<h2>Top-Level Working Groups<a name="top-level-working-groups" class="anchor" href="#top-level-working-groups"></a></h2><!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
+<p>Top-Level Working Groups are created by the 
+<a href="javascript:if(confirm(%27https://github.com/nodejs/TSC  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/TSC#top-level-wgs-and-tlps%27" tppabs="https://github.com/nodejs/TSC#top-level-wgs-and-tlps">Technical Steering Committee (TSC)</a>.</p>
+<h3>Current Top-Level Working Groups<a name="current-top-level-working-groups" class="anchor" href="#current-top-level-working-groups"></a></h3><ul>
+<li><a href="#inclusivity">Inclusivity</a></li>
+</ul>
+<h4><a href="javascript:if(confirm(%27https://github.com/nodejs/inclusivity  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/inclusivity%27" tppabs="https://github.com/nodejs/inclusivity">Inclusivity</a><a name="inclusivity" class="anchor" href="#inclusivity"></a></h4><p>The Inclusivity Working Group seeks to increase inclusivity and diversity for 
+the Node.js project:</p>
+<ul>
+<li>Increasing inclusivity means making the Node.js project a safe and friendly 
+place for people from diverse backgrounds.</li>
+<li>Increasing diversity means actively onboarding people from diverse backgrounds 
+to the Node.js project and maintaining their participation.</li>
+</ul>
+<p>Its responsibilites are:</p>
+<ul>
+<li>Foster a welcoming environment that ensures participants are valued and can 
+feel confident contributing or joining discussions, regardless of any <a href="javascript:if(confirm(%27https://github.com/nodejs/inclusivity/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/inclusivity/#list-of-responsibilities%27" tppabs="https://github.com/nodejs/inclusivity/#list-of-responsibilities">aspect of
+their identity</a>.</li>
+<li>Proactively seek and propose concrete steps the project can take to increase 
+inclusivity.</li>
+<li>Serve as a resource for the development and enforcement of workflows that 
+protect community members and projects from harassment and abuse.</li>
+<li>Acknowledge and celebrate existing diversity accomplishments within the project 
+while seeking to build upon them.</li>
+<li>Identify ways to measure diversity and inclusivity within the project and report 
+them at regular intervals.</li>
+</ul>
+<h1>Core Working Groups<a name="core-working-groups" class="anchor" href="#core-working-groups"></a></h1><!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<p>Core Working Groups are created by the 
+<a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/GOVERNANCE.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee%27" tppabs="https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee">Core Technical Committee (CTC)</a>.</p>
+<h2>Current Working Groups<a name="current-working-groups" class="anchor" href="#current-working-groups"></a></h2><ul>
+<li><a href="#website">Website</a></li>
+<li><a href="#streams">Streams</a></li>
+<li><a href="#build">Build</a></li>
+<li><a href="#tracing">Tracing</a></li>
+<li><a href="#i18n">i18n</a></li>
+<li><a href="#evangelism">Evangelism</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#addon-api">Addon API</a></li>
+<li><a href="#benchmarking">Benchmarking</a></li>
+<li><a href="#post-mortem">Post-mortem</a></li>
+<li><a href="#intl">Intl</a></li>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org%27" tppabs="https://github.com/nodejs/nodejs.org">Website</a><a name="website" class="anchor" href="#website"></a></h3><p>The website working group&#39;s purpose is to build and maintain a public
+website for the <code>Node.js</code> project.</p>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Develop and maintain a build and automation system for <code>nodejs.org</code>.</li>
+<li>Ensure the site is regularly updated with changes made to <code>Node.js</code> like
+releases and features.</li>
+<li>Foster and enable a community of translators.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/readable-stream  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/readable-stream%27" tppabs="https://github.com/nodejs/readable-stream">Streams</a><a name="streams" class="anchor" href="#streams"></a></h3><p>The Streams WG is dedicated to the support and improvement of the Streams API
+as used in Node.js and the npm ecosystem. We seek to create a composable API that
+solves the problem of representing multiple occurrences of an event over time
+in a humane, low-overhead fashion. Improvements to the API will be driven by
+the needs of the ecosystem; interoperability and backwards compatibility with
+other solutions and prior versions are paramount in importance. Our
+responsibilities include:</p>
+<ul>
+<li>Addressing stream issues on the Node.js issue tracker.</li>
+<li>Authoring and editing stream documentation within the Node.js project.</li>
+<li>Reviewing changes to stream subclasses within the Node.js project.</li>
+<li>Redirecting changes to streams from the Node.js project to this project.</li>
+<li>Assisting in the implementation of stream providers within Node.js.</li>
+<li>Recommending versions of readable-stream to be included in Node.js.</li>
+<li>Messaging about the future of streams to give the community advance notice of changes.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/build  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/build%27" tppabs="https://github.com/nodejs/build">Build</a><a name="build" class="anchor" href="#build"></a></h3><p>The build working group&#39;s purpose is to create and maintain a
+distributed automation infrastructure.</p>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Produce Packages for all target platforms.</li>
+<li>Run tests.</li>
+<li>Run performance testing and comparisons.</li>
+<li>Creates and manages build-containers.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/tracing-wg  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/tracing-wg%27" tppabs="https://github.com/nodejs/tracing-wg">Tracing</a><a name="tracing" class="anchor" href="#tracing"></a></h3><p>The tracing working group&#39;s purpose is to increase the
+transparency of software written in Node.js.</p>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Collaboration with V8 to integrate with <code>trace_event</code>.</li>
+<li>Maintenance and iteration on AsyncWrap.</li>
+<li>Maintenance and improvements to system tracing support (DTrace, LTTng, etc.)</li>
+<li>Documentation of tracing and debugging techniques.</li>
+<li>Fostering a tracing and debugging ecosystem.</li>
+</ul>
+<h3>i18n<a name="i18n" class="anchor" href="#i18n"></a></h3><p>The i18n working groups handle more than just translations. They
+are endpoints for community members to collaborate with each
+other in their language of choice.</p>
+<p>Each team is organized around a common spoken language. Each
+language community might then produce multiple localizations for
+various project resources.</p>
+<p>Their responsibilities are:</p>
+<ul>
+<li>Translations of any Node.js materials they believe are relevant to their
+community.</li>
+<li>Review processes for keeping translations up
+to date and of high quality.</li>
+<li>Social media channels in their language.</li>
+<li>Promotion of Node.js speakers for meetups and conferences in their
+language.</li>
+</ul>
+<p>Note that the i18n working groups are distinct from the <a href="#Intl">Intl</a> working group.</p>
+<p>Each language community maintains its own membership.</p>
+<ul>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ar  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ar%27" tppabs="https://github.com/nodejs/nodejs-ar">nodejs-ar - Arabic (اللغة العربية)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-bg  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-bg%27" tppabs="https://github.com/nodejs/nodejs-bg">nodejs-bg - Bulgarian (български език)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-bn  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-bn%27" tppabs="https://github.com/nodejs/nodejs-bn">nodejs-bn - Bengali (বাংলা)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-zh-CN  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-zh-CN%27" tppabs="https://github.com/nodejs/nodejs-zh-CN">nodejs-zh-CN - Chinese (中文)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-cs  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-cs%27" tppabs="https://github.com/nodejs/nodejs-cs">nodejs-cs - Czech (Český Jazyk)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-da  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-da%27" tppabs="https://github.com/nodejs/nodejs-da">nodejs-da - Danish (Dansk)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-de  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-de%27" tppabs="https://github.com/nodejs/nodejs-de">nodejs-de - German (Deutsch)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-el  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-el%27" tppabs="https://github.com/nodejs/nodejs-el">nodejs-el - Greek (Ελληνικά)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-es  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-es%27" tppabs="https://github.com/nodejs/nodejs-es">nodejs-es - Spanish (Español)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-fa  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-fa%27" tppabs="https://github.com/nodejs/nodejs-fa">nodejs-fa - Persian (فارسی)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-fi  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-fi%27" tppabs="https://github.com/nodejs/nodejs-fi">nodejs-fi - Finnish (Suomi)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-fr  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-fr%27" tppabs="https://github.com/nodejs/nodejs-fr">nodejs-fr - French (Français)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-he  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-he%27" tppabs="https://github.com/nodejs/nodejs-he">nodejs-he - Hebrew (עברית)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-hi  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-hi%27" tppabs="https://github.com/nodejs/nodejs-hi">nodejs-hi - Hindi (फिजी बात)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-hu  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-hu%27" tppabs="https://github.com/nodejs/nodejs-hu">nodejs-hu - Hungarian (Magyar)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-id  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-id%27" tppabs="https://github.com/nodejs/nodejs-id">nodejs-id - Indonesian (Bahasa Indonesia)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-it  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-it%27" tppabs="https://github.com/nodejs/nodejs-it">nodejs-it - Italian (Italiano)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ja  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ja%27" tppabs="https://github.com/nodejs/nodejs-ja">nodejs-ja - Japanese (日本語)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ka  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ka%27" tppabs="https://github.com/nodejs/nodejs-ka">nodejs-ka - Georgian (ქართული)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ko  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ko%27" tppabs="https://github.com/nodejs/nodejs-ko">nodejs-ko - Korean (조선말)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-mk  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-mk%27" tppabs="https://github.com/nodejs/nodejs-mk">nodejs-mk - Macedonian (Mакедонски)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ms  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ms%27" tppabs="https://github.com/nodejs/nodejs-ms">nodejs-ms - Malay (بهاس ملايو)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-nl  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-nl%27" tppabs="https://github.com/nodejs/nodejs-nl">nodejs-nl - Dutch (Nederlands)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-no  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-no%27" tppabs="https://github.com/nodejs/nodejs-no">nodejs-no - Norwegian (Norsk)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-pl  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-pl%27" tppabs="https://github.com/nodejs/nodejs-pl">nodejs-pl - Polish (Język Polski)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-pt  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-pt%27" tppabs="https://github.com/nodejs/nodejs-pt">nodejs-pt - Portuguese (Português)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ro  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ro%27" tppabs="https://github.com/nodejs/nodejs-ro">nodejs-ro - Romanian (Română)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ru  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ru%27" tppabs="https://github.com/nodejs/nodejs-ru">nodejs-ru - Russian (Русский)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-sv  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-sv%27" tppabs="https://github.com/nodejs/nodejs-sv">nodejs-sv - Swedish (Svenska)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-ta  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-ta%27" tppabs="https://github.com/nodejs/nodejs-ta">nodejs-ta - Tamil (தமிழ்)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-tr  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-tr%27" tppabs="https://github.com/nodejs/nodejs-tr">nodejs-tr - Turkish (Türkçe)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-zh-TW  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-zh-TW%27" tppabs="https://github.com/nodejs/nodejs-zh-TW">nodejs-zh-TW - Taiwanese (Hō-ló)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-uk  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-uk%27" tppabs="https://github.com/nodejs/nodejs-uk">nodejs-uk - Ukrainian (Українська)</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs-vi  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs-vi%27" tppabs="https://github.com/nodejs/nodejs-vi">nodejs-vi - Vietnamese (Tiếng Việtnam)</a></li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/Intl  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/Intl%27" tppabs="https://github.com/nodejs/Intl">Intl</a><a name="intl" class="anchor" href="#intl"></a></h3><p>The Intl Working Group is dedicated to support and improvement of
+Internationalization (i18n) and Localization (l10n) in Node. Its responsibilities are:</p>
+<ol>
+<li>Functionality &amp; compliance (standards: ECMA, Unicode…)</li>
+<li>Support for Globalization and Internationalization issues that come up in the tracker</li>
+<li>Guidance and Best Practices</li>
+<li>Refinement of existing <code>Intl</code> implementation</li>
+</ol>
+<p>The Intl WG is not responsible for translation of content. That is the responsibility of the specific <a href="#i18n">i18n</a> group for each language.</p>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/evangelism  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/evangelism%27" tppabs="https://github.com/nodejs/evangelism">Evangelism</a><a name="evangelism" class="anchor" href="#evangelism"></a></h3><p>The evangelism working group promotes the accomplishments
+of Node.js and lets the community know how they can get involved.</p>
+<p>Their responsibilities are:</p>
+<ul>
+<li>Project messaging.</li>
+<li>Official project social media.</li>
+<li>Promotion of speakers for meetups and conferences.</li>
+<li>Promotion of community events.</li>
+<li>Publishing regular update summaries and other promotional
+content.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/http  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/http%27" tppabs="https://github.com/nodejs/http">HTTP</a><a name="http" class="anchor" href="#http"></a></h3><p>The HTTP working group is chartered for the support and improvement of the
+HTTP implementation in Node. It&#39;s responsibilities are:</p>
+<ul>
+<li>Addressing HTTP issues on the Node.js issue tracker.</li>
+<li>Authoring and editing HTTP documentation within the Node.js project.</li>
+<li>Reviewing changes to HTTP functionality within the Node.js project.</li>
+<li>Working with the ecosystem of HTTP related module developers to evolve the
+HTTP implementation and APIs in core.</li>
+<li>Advising the CTC on all HTTP related issues and discussions.</li>
+<li>Messaging about the future of HTTP to give the community advance notice of
+changes.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/roadmap  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/roadmap%27" tppabs="https://github.com/nodejs/roadmap">Roadmap</a><a name="roadmap" class="anchor" href="#roadmap"></a></h3><p>The roadmap working group is responsible for user community outreach
+and the translation of their concerns into a plan of action for Node.js.</p>
+<p>The final <a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/ROADMAP.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/ROADMAP.md%27" tppabs="https://github.com/nodejs/node/blob/master/ROADMAP.md">ROADMAP</a> document is still 
+owned by the TC and requires the same approval for changes as any other project asset.</p>
+<p>Their responsibilities are:</p>
+<ul>
+<li>Attract and summarize user community needs and feedback.</li>
+<li>Find or potentially create tools that allow for broader participation.</li>
+<li>Create Pull Requests for relevant changes to 
+<a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/ROADMAP.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/ROADMAP.md%27" tppabs="https://github.com/nodejs/node/blob/master/ROADMAP.md">ROADMAP.md</a></li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/docker-node  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/docker-node%27" tppabs="https://github.com/nodejs/docker-node">Docker</a><a name="docker" class="anchor" href="#docker"></a></h3><p>The Docker working group&#39;s purpose is to build, maintain, and improve official
+Docker images for the <code>Node.js</code> project.</p>
+<p>Their responsibilities are:</p>
+<ul>
+<li>Keep the official Docker images updated in line with new <code>Node.js</code> releases.</li>
+<li>Decide and implement image improvements and/or fixes.</li>
+<li>Maintain and improve the images&#39; documentation.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/nan  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nan%27" tppabs="https://github.com/nodejs/nan">Addon API</a><a name="addon-api" class="anchor" href="#addon-api"></a></h3><p>The Addon API Working Group is responsible for maintaining the NAN project and
+corresponding <em>nan</em> package in npm. The NAN project makes available an
+abstraction layer for native add-on authors for both Node.js and Node.js,
+assisting in the writing of code that is compatible with many actively used
+versions of Node.js, Node.js, V8 and libuv.</p>
+<p>Their responsibilities are:</p>
+<ul>
+<li>Maintaining the <a href="javascript:if(confirm(%27https://github.com/nodejs/nan  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nan%27" tppabs="https://github.com/nodejs/nan">NAN</a> GitHub repository,
+including code, issues and documentation.</li>
+<li>Maintaining the <a href="javascript:if(confirm(%27https://github.com/nodejs/node-addon-examples  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node-addon-examples%27" tppabs="https://github.com/nodejs/node-addon-examples">addon-examples</a>
+GitHub repository, including code, issues and documentation.</li>
+<li>Maintaining the C++ Addon API within the Node.js project, in subordination to
+the Node.js CTC.</li>
+<li>Maintaining the Addon documentation within the Node.js project, in
+subordination to the Node.js CTC.</li>
+<li>Maintaining the <em>nan</em> package in npm, releasing new versions as appropriate.</li>
+<li>Messaging about the future of the Node.js and NAN interface to give the
+community advance notice of changes.</li>
+</ul>
+<p>The current members can be found in their
+<a href="javascript:if(confirm(%27https://github.com/nodejs/nan  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nan#collaborators%27" tppabs="https://github.com/nodejs/nan#collaborators">README</a>.</p>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/benchmarking  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/benchmarking%27" tppabs="https://github.com/nodejs/benchmarking">Benchmarking</a><a name="benchmarking" class="anchor" href="#benchmarking"></a></h3><p>The purpose of the Benchmark working group is to gain consensus
+for an agreed set of benchmarks that can be used to:</p>
+<ul>
+<li>track and evangelize performance gains made between Node releases</li>
+<li>avoid performance regressions between releases</li>
+</ul>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Identify 1 or more benchmarks that reflect customer usage.
+ Likely need more than one to cover typical Node use cases
+ including low-latency and high concurrency</li>
+<li>Work to get community consensus on the list chosen</li>
+<li>Add regular execution of chosen benchmarks to Node builds</li>
+<li>Track/publicize performance between builds/releases</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/post-mortem  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/post-mortem%27" tppabs="https://github.com/nodejs/post-mortem">Post-mortem</a><a name="post-mortem" class="anchor" href="#post-mortem"></a></h3><p>The Post-mortem Diagnostics working group is dedicated to the support
+and improvement of postmortem debugging for Node.js. It seeks to
+elevate the role of postmortem debugging for Node, to assist in the
+development of techniques and tools, and to make techniques and tools
+known and available to Node.js users.</p>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Defining and adding interfaces/APIs in order to allow dumps
+to be generated when needed</li>
+<li>Defining and adding common structures to the dumps generated
+in order to support tools that want to introspect those dumps</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/docs  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/docs%27" tppabs="https://github.com/nodejs/docs">Documentation</a><a name="documentation" class="anchor" href="#documentation"></a></h3><p>The Documentation working group exists to support the improvement of Node.js
+documentation, both in the core API documentation, and elsewhere, such as the
+Node.js website. Its intent is to work closely with Evangelism, Website, and
+Intl working groups to make excellent documentation available and accessible
+to all.</p>
+<p>Its responsibilities are:</p>
+<ul>
+<li>Defining and maintaining documentation style and content standards.</li>
+<li>Producing documentation in a format acceptable for the Website WG to consume.</li>
+<li>Ensuring that Node&#39;s documentation addresses a wide variety of audiences.</li>
+<li>Creating and operating a process for documentation review that produces
+quality documentation and avoids impeding the progress of Core work.</li>
+</ul>
+<h3><a href="javascript:if(confirm(%27https://github.com/nodejs/testing  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/testing%27" tppabs="https://github.com/nodejs/testing">Testing</a><a name="testing" class="anchor" href="#testing"></a></h3><p>The Node.js Testing Working Group&#39;s purpose is to extend and improve testing of
+the Node.js source code.</p>
+<p>It&#39;s responsibilities are:</p>
+<ul>
+<li>Coordinating an overall strategy for improving testing.</li>
+<li>Documenting guidelines around tests.</li>
+<li>Working with the Build Working Group to improve continuous integration.</li>
+<li>Improving tooling for testing.</li>
+</ul>
+
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="../../../static/images/lfcp.png" tppabs="https://nodejs.org/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="javascript:if(confirm(%27https://nodejs.org/static/documents/trademark-policy.pdf  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/static/documents/trademark-policy.pdf%27" tppabs="https://nodejs.org/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="../../../static/css/prism-tomorrow.css" tppabs="https://nodejs.org/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='../../../static/js/modernizr.custom.js'/*tpa=https://nodejs.org/static/js/modernizr.custom.js*/;
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>

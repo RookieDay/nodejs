@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/blog/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="../styles.css" tppabs="https://nodejs.org/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../www.google-analytics.com/analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="javascript:if(confirm(%27https://nodejs.org/en  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en%27" tppabs="https://nodejs.org/en" id="logo">
+              <img src="../../static/images/logos/nodejs-new-white-pantone.png" tppabs="https://nodejs.org/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="../index.htm" tppabs="https://nodejs.org/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="../about/index.htm" tppabs="https://nodejs.org/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="../download/index.htm" tppabs="https://nodejs.org/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="../docs/index.htm" tppabs="https://nodejs.org/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="../foundation/index.htm" tppabs="https://nodejs.org/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="../get-involved/index.htm" tppabs="https://nodejs.org/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="../security/index.htm" tppabs="https://nodejs.org/en/security/">Security</a>
+                        </li>
+                        <li class="active">
+                            <a href="index.htm" tppabs="https://nodejs.org/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container">
+            <h2>News from 2016</h2>
+
+            <ul class="blog-index">
+                    <li>
+                        <time datetime="Sat Apr 23 2016 12:00:00 GMT+0000 (UTC)">23 Apr</time>
+                        <a href="weekly-updates/weekly-update.2016-04-23/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-04-23/">Weekly Update - Apr 23rd, 2016</a>
+
+                            <div class="summary">
+                              <p><a href="release/v5.11.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.11.0/">Node v5.11.0 (Stable)</a>. Complete changelog from previous releases can be found <a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/CHANGELOG.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/CHANGELOG.md%27" tppabs="https://github.com/nodejs/node/blob/master/CHANGELOG.md">on GitHub</a>.</p><ul>
+<li><a href="javascript:if(confirm(%27http://nodeup.com/onehundred  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nodeup.com/onehundred%27" tppabs="http://nodeup.com/onehundred">NodeUp podcast episode 100</a>: A Creative Coding Show with Mariko Kosaka, Kassandra Perch, Myles Borins, and Rich Trott.</li>
+<li><a href="javascript:if(confirm(%27https://medium.com/@Trott/a-quick-guide-to-reading-node-js-core-source-c968d83e4194  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://medium.com/@Trott/a-quick-guide-to-reading-node-js-core-source-c968d83e4194#.mmontrmvg%27" tppabs="https://medium.com/@Trott/a-quick-guide-to-reading-node-js-core-source-c968d83e4194#.mmontrmvg">A Quick Guide To Reading Node.js Core Source</a>: One person&apos;s approach to understanding the source code that makes up Node.js core. &quot;Your mileage may vary. Warranty void if seal is broken.&quot;</li>
+</ul><p><a href="weekly-updates/weekly-update.2016-04-23/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-04-23/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Thu Apr 21 2016 20:35:53 GMT+0000 (UTC)">21 Apr</time>
+                        <a href="release/v5.11.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.11.0/">Node v5.11.0 (Stable)</a>
+
+                            <div class="summary">
+                              <ul>
+<li><strong>Buffer</strong>:<ul>
+<li><code>Buffer.prototype.compare</code> can now compare sub-ranges of two Buffers. (James M Snell) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5880  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5880%27" tppabs="https://github.com/nodejs/node/pull/5880">#5880</a></li>
+</ul>
+</li>
+<li><strong>deps</strong>:<ul>
+<li>update to http-parser 2.7.0 (Fedor Indutny) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6279  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6279%27" tppabs="https://github.com/nodejs/node/pull/6279">#6279</a></li>
+<li>update ESLint to 2.7.0 (silverwind) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6132  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6132%27" tppabs="https://github.com/nodejs/node/pull/6132">#6132</a></li>
+</ul>
+</li>
+<li><strong>net</strong>:<ul>
+<li>adds support for passing DNS lookup hints to <code>createConnection()</code> (Colin Ihrig) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6000  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6000%27" tppabs="https://github.com/nodejs/node/pull/6000">#6000</a> </li>
+</ul>
+</li>
+<li><strong>node</strong>:<ul>
+<li>Make the builtin libraries available for the <code>--eval</code> and <code>--print</code> CLI options (Anna Henningsen) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6207  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6207%27" tppabs="https://github.com/nodejs/node/pull/6207">#6207</a></li>
+</ul>
+</li>
+<li><strong>npm</strong>:<ul>
+<li>upgrade npm to 3.8.6 (Kat March&#xE1;n) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6153  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6153%27" tppabs="https://github.com/nodejs/node/pull/6153">#6153</a></li>
+</ul>
+</li>
+<li><strong>repl</strong>:<ul>
+<li>Pressing enter in the repl will repeat the last command by default if no input has been received. This behaviour was in node previously and was not removed intentionally. (Rich Trott) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6090  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6090%27" tppabs="https://github.com/nodejs/node/pull/6090">#6090</a></li>
+</ul>
+</li>
+<li><strong>src</strong>:<ul>
+<li>add SIGINFO to supported signals (James Reggio) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6093  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6093%27" tppabs="https://github.com/nodejs/node/pull/6093">#6093</a></li>
+</ul>
+</li>
+<li><strong>streams</strong>:<ul>
+<li>Fix a regression that caused by net streams requesting multiple chunks synchronously when combined with cork/uncork (Matteo Collina) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6164  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6164%27" tppabs="https://github.com/nodejs/node/pull/6164">#6164</a></li>
+</ul>
+</li>
+<li><strong>zlib</strong>:<ul>
+<li>The flushing flag is now configurable allowing for decompression of partial data (Anna Henningsen) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6069  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6069%27" tppabs="https://github.com/nodejs/node/pull/6069">#6069</a></li>
+</ul>
+</li>
+</ul><p><a href="release/v5.11.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.11.0/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Sun Apr 17 2016 12:00:00 GMT+0000 (UTC)">17 Apr</time>
+                        <a href="weekly-updates/weekly-update.2016-04-17/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-04-17/">Weekly Update - Apr 17th, 2016</a>
+
+                            <div class="summary">
+                              <p>Node v4.4.3 (LTS) is released.</p><p>We have one release: <a href="release/v4.4.3/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.3/">Node v4.4.3 (LTS)</a>. Complete changelog from previous releases can be found <a href="javascript:if(confirm(%27https://github.com/nodejs/node/blob/master/CHANGELOG.md  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/blob/master/CHANGELOG.md%27" tppabs="https://github.com/nodejs/node/blob/master/CHANGELOG.md">on GitHub</a>.</p><p>The Node.js User Survey report features insights on emerging trends happening in this massive community that serves as a leading indicator on trends like microservices architectures, real-time web applications, Internet of Things (IoT). The report paints a detailed picture of the technologies that are being used, in particular, with Node.js in production and language preferences (current and future) for front end, back end and IoT developers.</p><p><a href="weekly-updates/weekly-update.2016-04-17/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-04-17/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Tue Apr 12 2016 22:08:19 GMT+0000 (UTC)">12 Apr</time>
+                        <a href="release/v4.4.3/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.3/">Node v4.4.3 (LTS)</a>
+
+                            <div class="summary">
+                              <ul>
+<li><strong>deps</strong>:<ul>
+<li>Fix <code>--gdbjit</code> for embedders. Backported from v8 upstream. (Ben Noordhuis) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5577  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5577%27" tppabs="https://github.com/nodejs/node/pull/5577">#5577</a></li>
+</ul>
+</li>
+<li><strong>etw</strong>:<ul>
+<li>Correctly display descriptors for ETW events 9 and 23 on the windows platform. (Jo&#xE3;o Reis) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5742  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5742%27" tppabs="https://github.com/nodejs/node/pull/5742">#5742</a></li>
+</ul>
+</li>
+<li><strong>querystring</strong>:<ul>
+<li>Restore throw when attempting to stringify bad surrogate pair. (Brian White) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5858  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5858%27" tppabs="https://github.com/nodejs/node/pull/5858">#5858</a></li>
+</ul>
+</li>
+</ul><p><a href="release/v4.4.3/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.3/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Tue Apr 12 2016 13:00:00 GMT+0000 (UTC)">12 Apr</time>
+                        <a href="announcements/nodejs-foundation-survey/index.htm" tppabs="https://nodejs.org/en/blog/announcements/nodejs-foundation-survey/">New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers</a>
+
+                            <div class="summary">
+                              <p><strong>SAN FRANCISCO, April, 12, 2016</strong> &#x2014; <a href="javascript:if(confirm(%27http://ctt.marketwire.com/?release=11G082331-001&id=8448115&type=0&url=https%3a%2f%2fnodejs.org%2fen%2ffoundation%2f  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://ctt.marketwire.com/?release=11G082331-001&id=8448115&type=0&url=https%3a%2f%2fnodejs.org%2fen%2ffoundation%2f%27" tppabs="http://ctt.marketwire.com/?release=11G082331-001&id=8448115&type=0&url=https%3a%2f%2fnodejs.org%2fen%2ffoundation%2f">The Node.js Foundation</a>, 
+a community-led and industry-backed consortium to advance the development of the Node.js 
+platform, today announced the availability of its first ever Node.js User Survey Report. </p><p><a href="announcements/nodejs-foundation-survey/index.htm" tppabs="https://nodejs.org/en/blog/announcements/nodejs-foundation-survey/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Tue Apr 05 2016 23:33:44 GMT+0000 (UTC)">05 Apr</time>
+                        <a href="release/v5.10.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.10.1/">Node v5.10.1 (Stable)</a>
+
+                            <div class="summary">
+                              <p><strong>http</strong>:</p><ul>
+<li>Enclose IPv6 Host header in square brackets. This will enable proper seperation of the host adress from any port reference (Mihai Potra) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5314  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5314%27" tppabs="https://github.com/nodejs/node/pull/5314">#5314</a></li>
+</ul><p><strong>path</strong>:</p><ul>
+<li>Make win32.isAbsolute more consistent (Brian White) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/6028  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/6028%27" tppabs="https://github.com/nodejs/node/pull/6028">#6028</a></li>
+</ul><p><a href="release/v5.10.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.10.1/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Fri Apr 01 2016 04:35:44 GMT+0000 (UTC)">01 Apr</time>
+                        <a href="release/v0.10.44/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.10.44/">Node v0.10.44 (Maintenance)</a>
+
+                            <div class="summary">
+                              <p><strong>This is a security release</strong>, upgrading the bundled version of npm due to a credentials leak vulnerability. Further information can be found in our post: <a href="vulnerability/npm-tokens-leak-march-2016/index-1.htm" tppabs="http://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">http://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/</a></p><p><a href="release/v0.10.44/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.10.44/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Fri Apr 01 2016 03:31:50 GMT+0000 (UTC)">01 Apr</time>
+                        <a href="release/v5.10.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.10.0/">Node v5.10.0 (Stable)</a>
+
+                            <div class="summary">
+                              <p>This release includes a security update for npm. For more details you can read 
+<a href="vulnerability/npm-tokens-leak-march-2016/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">this post on our blog</a> 
+written by <a href="javascript:if(confirm(%27https://github.com/othiym23  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/othiym23%27" tppabs="https://github.com/othiym23">Forrest L Norvell</a> from npm.</p><ul>
+<li><strong>buffer</strong>:<ul>
+<li>make byteLength work with ArrayBuffer &amp; DataView (Jackson Tian) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5255  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5255%27" tppabs="https://github.com/nodejs/node/pull/5255">#5255</a></li>
+<li>backport --zero-fill-buffers command line option (James M Snell) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5744  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5744%27" tppabs="https://github.com/nodejs/node/pull/5744">#5744</a></li>
+<li>backport new buffer constructor APIs (James M Snell) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5763  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5763%27" tppabs="https://github.com/nodejs/node/pull/5763">#5763</a></li>
+<li>add swap16() and swap32() methods (James M Snell) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5724  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5724%27" tppabs="https://github.com/nodejs/node/pull/5724">#5724</a></li>
+</ul>
+</li>
+<li><strong>fs</strong>: add the fs.mkdtemp() function. (Florian MARGAINE) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5333  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5333%27" tppabs="https://github.com/nodejs/node/pull/5333">#5333</a></li>
+<li><strong>net</strong>: emit host in lookup event (HUANG Wei) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5598  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5598%27" tppabs="https://github.com/nodejs/node/pull/5598">#5598</a></li>
+<li><strong>node</strong>: --no-browser-globals configure flag (Fedor Indutny) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5853  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5853%27" tppabs="https://github.com/nodejs/node/pull/5853">#5853</a></li>
+<li><strong>npm</strong>: Upgrade to v3.8.3. Fixes a security flaw in the use of authentication tokens in HTTP requests that 
+would allow an attacker to set up a server that could collect tokens from users of the command-line interface. 
+Authentication tokens have previously been sent with every request made by the CLI for logged-in users, 
+regardless of the destination of the request. This update fixes this by only including those tokens for requests 
+made against the registry or registries used for the current install. (Forrest L Norvell) <a href="javascript:if(confirm(%27https://github.com/npm/node/pull/6  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/npm/node/pull/6%27" tppabs="https://github.com/npm/node/pull/6">npm/node#6</a></li>
+<li><strong>repl</strong>: support standalone blocks (Prince J Wesley) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/5581  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/5581%27" tppabs="https://github.com/nodejs/node/pull/5581">#5581</a></li>
+<li><strong>src</strong>: override v8 thread defaults using cli options (Tom Gallacher) <a href="javascript:if(confirm(%27https://github.com/nodejs/node/pull/4344  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/pull/4344%27" tppabs="https://github.com/nodejs/node/pull/4344">#4344</a></li>
+</ul><p><a href="release/v5.10.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.10.0/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Fri Apr 01 2016 01:47:06 GMT+0000 (UTC)">01 Apr</time>
+                        <a href="release/v4.4.2/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.2/">Node v4.4.2 (LTS)</a>
+
+                            <div class="summary">
+                              <p>This release includes a security update for npm. For more details you can read <a href="vulnerability/npm-tokens-leak-march-2016/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">this post on our blog</a> written by <a href="javascript:if(confirm(%27https://github.com/othiym23  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/othiym23%27" tppabs="https://github.com/othiym23">Forrest L Norvell</a> from npm.</p><p><em>Update</em>: The version of npm included in this release did not have the correct version string. As such executing <code>npm -v</code> will report <code>2.15.0</code> rather than <code>2.15.1</code>, which is incorrect. The source code included in this release is in fact the source for <code>2.15.1</code>, including the security fix.</p><p><a href="release/v4.4.2/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.2/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Fri Apr 01 2016 00:12:07 GMT+0000 (UTC)">01 Apr</time>
+                        <a href="release/v0.12.13/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.12.13/">Node v0.12.13 (LTS)</a>
+
+                            <div class="summary">
+                              <p><strong>This is a security release</strong>, upgrading the bundled version of npm due to a credentials leak vulnerability. Further information can be found in our post: <a href="vulnerability/npm-tokens-leak-march-2016/index-1.htm" tppabs="http://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">http://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/</a></p><p><a href="release/v0.12.13/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.12.13/">Read more...</a></p>
+                            <div>
+                    </li>
+                    <li>
+                        <time datetime="Thu Mar 31 2016 10:41:46 GMT+0000 (UTC)">31 Mar</time>
+                        <a href="vulnerability/npm-tokens-leak-march-2016/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">npm security updates v2.15.1 and v3.8.3</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Mar 29 2016 13:00:00 GMT+0000 (UTC)">29 Mar</time>
+                        <a href="announcements/welcome-google/index.htm" tppabs="https://nodejs.org/en/blog/announcements/welcome-google/">Welcome Google Cloud Platform!</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 23 2016 17:40:02 GMT+0000 (UTC)">23 Mar</time>
+                        <a href="release/v5.9.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.9.1/">Node v5.9.1 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Mar 22 2016 22:59:32 GMT+0000 (UTC)">22 Mar</time>
+                        <a href="release/v4.4.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.1/">Node v4.4.1 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 16 2016 21:34:26 GMT+0000 (UTC)">16 Mar</time>
+                        <a href="release/v5.9.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.9.0/">Node v5.9.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Mar 14 2016 12:00:00 GMT+0000 (UTC)">14 Mar</time>
+                        <a href="weekly-updates/weekly-update.2016-03-14/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-03-14/">Weekly Update - Mar 14th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 09 2016 21:00:00 GMT+0000 (UTC)">09 Mar</time>
+                        <a href="announcements/appdynamics-newrelic-opbeat-sphinx/index.htm" tppabs="https://nodejs.org/en/blog/announcements/appdynamics-newrelic-opbeat-sphinx/">AppDynamics, New Relic, Opbeat and Sphinx Join the Node.js Foundation as Silver Members</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 09 2016 17:04:31 GMT+0000 (UTC)">09 Mar</time>
+                        <a href="release/v4.4.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.4.0/">Node v4.4.0 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 09 2016 15:57:36 GMT+0000 (UTC)">09 Mar</time>
+                        <a href="release/v5.8.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.8.0/">Node v5.8.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 09 2016 03:05:35 GMT+0000 (UTC)">09 Mar</time>
+                        <a href="release/v0.12.12/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.12.12/">Node v0.12.12 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Mar 07 2016 12:00:00 GMT+0000 (UTC)">07 Mar</time>
+                        <a href="weekly-updates/weekly-update.2016-03-07/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-03-07/">Weekly Update - Mar 7th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Fri Mar 04 2016 01:47:40 GMT+0000 (UTC)">04 Mar</time>
+                        <a href="release/v0.10.43/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.10.43/">Node v0.10.43 (Maintenance)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Thu Mar 03 2016 18:07:44 GMT+0000 (UTC)">03 Mar</time>
+                        <a href="release/v0.12.11/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.12.11/">Node v0.12.11 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 02 2016 23:23:06 GMT+0000 (UTC)">02 Mar</time>
+                        <a href="release/v5.7.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.7.1/">Node v5.7.1 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Mar 02 2016 21:53:44 GMT+0000 (UTC)">02 Mar</time>
+                        <a href="release/v4.3.2/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.3.2/">Node v4.3.2 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Mar 01 2016 12:00:00 GMT+0000 (UTC)">01 Mar</time>
+                        <a href="weekly-updates/weekly-update.2016-03-01/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-03-01/">Weekly Update - Mar 1st, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Feb 29 2016 02:08:06 GMT+0000 (UTC)">29 Feb</time>
+                        <a href="vulnerability/openssl-march-2016/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/openssl-march-2016/">OpenSSL updates, 1.0.2g and 1.0.1s</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 23 2016 12:00:00 GMT+0000 (UTC)">23 Feb</time>
+                        <a href="weekly-updates/weekly-update.2016-02-22/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-02-22/">Weekly Update - Feb 23rd, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 23 2016 05:37:34 GMT+0000 (UTC)">23 Feb</time>
+                        <a href="release/v5.7.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.7.0/">Node v5.7.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Feb 17 2016 17:34:38 GMT+0000 (UTC)">17 Feb</time>
+                        <a href="release/v4.3.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.3.1/">Node v4.3.1 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Feb 15 2016 12:00:00 GMT+0000 (UTC)">15 Feb</time>
+                        <a href="weekly-updates/weekly-update.2016-02-15/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-02-15/">Weekly Update - Feb 15th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Feb 10 2016 21:00:00 GMT+0000 (UTC)">10 Feb</time>
+                        <a href="announcements/foundation-express-news/index.htm" tppabs="https://nodejs.org/en/blog/announcements/foundation-express-news/">Node.js Foundation to Add Express to its Incubator Program</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 09 2016 17:40:00 GMT+0000 (UTC)">09 Feb</time>
+                        <a href="vulnerability/february-2016-security-releases/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/">February 2016 Security Release Summary</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 09 2016 17:34:00 GMT+0000 (UTC)">09 Feb</time>
+                        <a href="release/v0.10.42/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.10.42/">Node v0.10.42 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 09 2016 17:33:00 GMT+0000 (UTC)">09 Feb</time>
+                        <a href="release/v0.12.10/index.htm" tppabs="https://nodejs.org/en/blog/release/v0.12.10/">Node v0.12.10 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 09 2016 17:32:54 GMT+0000 (UTC)">09 Feb</time>
+                        <a href="release/v4.3.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.3.0/">Node v4.3.0 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Feb 09 2016 17:32:46 GMT+0000 (UTC)">09 Feb</time>
+                        <a href="release/v5.6.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.6.0/">Node v5.6.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Feb 08 2016 12:00:00 GMT+0000 (UTC)">08 Feb</time>
+                        <a href="weekly-updates/weekly-update.2016-02-08/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-02-08/">Weekly Update - Feb 8th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Fri Jan 29 2016 12:00:00 GMT+0000 (UTC)">29 Jan</time>
+                        <a href="weekly-updates/weekly-update.2016-01-29/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-01-29/">Weekly Update - Jan 29th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Jan 27 2016 11:34:41 GMT+0000 (UTC)">27 Jan</time>
+                        <a href="vulnerability/openssl-and-low-severity-fixes-jan-2016/index.htm" tppabs="https://nodejs.org/en/blog/vulnerability/openssl-and-low-severity-fixes-jan-2016/">OpenSSL upgrade low-severity Node.js security fixes</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Fri Jan 22 2016 12:00:00 GMT+0000 (UTC)">22 Jan</time>
+                        <a href="weekly-updates/weekly-update.2016-01-22/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-01-22/">Weekly Update - Jan 22th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Thu Jan 21 2016 22:26:03 GMT+0000 (UTC)">21 Jan</time>
+                        <a href="release/v4.2.6/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.2.6/">Node v4.2.6 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Thu Jan 21 2016 02:26:55 GMT+0000 (UTC)">21 Jan</time>
+                        <a href="release/v5.5.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.5.0/">Node v5.5.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Jan 20 2016 21:51:29 GMT+0000 (UTC)">20 Jan</time>
+                        <a href="release/v4.2.5/index.htm" tppabs="https://nodejs.org/en/blog/release/v4.2.5/">Node v4.2.5 (LTS)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Jan 18 2016 12:00:00 GMT+0000 (UTC)">18 Jan</time>
+                        <a href="weekly-updates/weekly-update.2016-01-18/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-01-18/">Weekly Update - Jan 18th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Tue Jan 12 2016 23:59:28 GMT+0000 (UTC)">12 Jan</time>
+                        <a href="release/v5.4.1/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.4.1/">Node v5.4.1 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Mon Jan 11 2016 12:00:00 GMT+0000 (UTC)">11 Jan</time>
+                        <a href="weekly-updates/weekly-update.2016-01-11/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-01-11/">Weekly Update - Jan 11th, 2016</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Wed Jan 06 2016 22:41:09 GMT+0000 (UTC)">06 Jan</time>
+                        <a href="release/v5.4.0/index.htm" tppabs="https://nodejs.org/en/blog/release/v5.4.0/">Node v5.4.0 (Stable)</a>
+
+                    </li>
+                    <li>
+                        <time datetime="Fri Jan 01 2016 12:00:00 GMT+0000 (UTC)">01 Jan</time>
+                        <a href="weekly-updates/weekly-update.2016-01-01/index.htm" tppabs="https://nodejs.org/en/blog/weekly-updates/weekly-update.2016-01-01/">Weekly Update - Jan 1st, 2016</a>
+
+                    </li>
+            </ul>
+
+                <nav class="pagination">
+
+                    
+
+                        <a href="javascript:if(confirm(%27https://nodejs.org/en/blog/year-2015/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/en/blog/year-2015/%27" tppabs="https://nodejs.org/en/blog/year-2015">Older &gt;</a>
+                </nav>
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="../../static/images/lfcp.png" tppabs="https://nodejs.org/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="javascript:if(confirm(%27https://nodejs.org/static/documents/trademark-policy.pdf  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/static/documents/trademark-policy.pdf%27" tppabs="https://nodejs.org/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="../../static/css/prism-tomorrow.css" tppabs="https://nodejs.org/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='../../static/js/modernizr.custom.js'/*tpa=https://nodejs.org/static/js/modernizr.custom.js*/;
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>
