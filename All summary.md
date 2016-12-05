@@ -380,7 +380,11 @@ npm root -g
 npm install -g http-server   (会默认安装到你的本地的node_module npm文件下)
 如果你碰到卡死的撞到 到你的用户\GL|.npmrc目录下 删除.npmrc文件
 
+npm install less -g
+lessc example.less
+lessc example.less example.css
 
+npm install -g bower 全局命令行工具
 
 npm init -y  初始化一个json 文件
 npm install underscore --save 保存dependenicies 到json文件当中
