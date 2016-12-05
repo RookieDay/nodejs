@@ -370,6 +370,14 @@ markdown-preview README.md
 
 -----------------------------
 hexo 静态博客生成器
+npm install -g hexo
+cd blog 
+hexo server   localhost:4000
+hexo new "good day" 
+
+
+
+
 npm init -y  初始化一个json 文件
 npm install underscore --save 保存dependenicies 到json文件当中
 
@@ -379,7 +387,7 @@ npm install underscore --save 保存dependenicies 到json文件当中
 下载最新的 可能比拷贝的版本稳定
 
 
-npm install -g 包名  代表安装一个全局可用的命令行工具
+npm install -g 包名  -g代表安装一个全局可用的命令行工具
 
 npm install -g hexo-cli 相当于安装了hexo 命令行工具
 
@@ -398,7 +406,7 @@ npm install 包名 --registry=https://registry.npm.taobao.org
 npm init -y 自动生成 输入信息
 新建lib目录  
 npm install --save jQuery 会在package.json中保存依赖项
-npm install 会下载你的依赖node module包
+npm install 会根据pakage.json的dependincies下载你的依赖node module包
 npm uninstall jQuery --save  会删掉package.json中的依赖
 /**
  * 加载目录的规则
@@ -434,3 +442,35 @@ console.log(module.paths);
 //   'C:\\Users\\iroc\\node_modules',
 //   'C:\\Users\\node_modules',
 //   'C:\\node_modules' ]
+
+
++ 以 `/` 开头的绝对路径文件模块
+    * 在 Windows 中， `/` 表示 require 方法所在文件所属的盘符，不要这样使用
+    * 在 Linux 中，`/` 就表示 根路径
+  + 加载一个目录
+    * package.json 文件中的 main 属性
+    * index.js index.node index.json
+  + 加载一个包
+    * module.paths
+    * package.json
+    * index.js index.node index.json
+    * node_modules 目录一般用来放置第三方包的
+    * 不要把自己写的模块或者包放到 node_modules 目录下
+
+## npm
+
+### 解决 npm 被墙的问题
+
+- 第一种方式：通过指定镜像源地址来下载包：
+`npm install 包名 --registry=https://registry.npm.taobao.org`
+
+- 第二种方式：通过 淘宝提供的一个 cnpm 全局命令行工具
+  + 安装全局命令行工具 `npm install -g cnpm`
+  + 基本使用`cnpm install 包名`
+
+- 第三种方式：通过一个全局命令行工具 `nrm` 来管理我们的镜像源地址
+  + 安装nrm `npm install -g nrm`
+  + 基本使用
+    * 显示当前所有可用镜像源 `nrm ls`
+    * 显示当前正在使用的镜像源 `nrm current`
+    * 切换镜像源 `nrm use 镜像源名称`
