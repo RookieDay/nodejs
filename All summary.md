@@ -373,8 +373,12 @@ hexo 静态博客生成器
 npm install -g hexo
 cd blog 
 hexo server   localhost:4000
-hexo new "good day" 
+hexo new "good day"   //代表创建一个博客
 
+npm configure set prefix "c"\....\node_modules\npm"
+npm root -g
+npm install -g http-server   (会默认安装到你的本地的node_module npm文件下)
+如果你碰到卡死的撞到 到你的用户\GL|.npmrc目录下 删除.npmrc文件
 
 
 
