@@ -389,5 +389,48 @@ npm install http-server -g
 
 npm install -g less 
 
+npm uninstall jQuery
 
 npm install 包名 --registry=https://registry.npm.taobao.org
+
+步骤：
+新建一个package.json文件
+npm init -y 自动生成 输入信息
+新建lib目录  
+npm install --save jQuery 会在package.json中保存依赖项
+npm install 会下载你的依赖node module包
+npm uninstall jQuery --save  会删掉package.json中的依赖
+/**
+ * 加载目录的规则
+ */
+
+// 如果写全了文件路径+扩展名 Node.js 会直接把该路径解析为一个绝对路径直接加载，如果没有，直接报错
+// 
+// 如果省略了扩展名，Node.js 优先尝试找有没有一个叫做 cal 目录
+// 如果有 cal 目录，在该目录下，找有没有一个叫做 package.json 的文件
+// 找到 package.json 文件之后 找文件下有没有一个 main 属性
+// 如果得到 main 属性的值，直接根据该值去加载文件模块
+// 如果没有package.json 文件 或者 文件中没有 main属性或者 main 属性中的文件路径值不存在
+// 这个时候，Noide.js 会直接找该目录下 index.js  index.node index.json
+// 以后自己在写js代码的时候，文件最好不要与目录同名
+var cal = require('./cal'); // ./cal.js ./cal.node ./cal.json  最后得到了一个目录 ./cal 目录
+
+console.log(cal);
+
+
+
+// nodejs 还有一种特殊的模块加载规则，叫做：包的加载
+// 当模块标识 既不是文件模块，也不是核心模块的时候，
+// Node.js按照一定的规则去查找该 包模块
+// 先找当前的 node_modules 目录下有没有 node-markdown ，如果有，优先找 package.json 文件
+// 找到 package.json 文件之后，找 里面的 main 属性
+// 如果 package.json 文件没有 或者 没有 main 属性 或者 main属性指定的文件模块不存在
+// Node.js 会取上一级目录下的 node_modules 目录下 找 node-markdown  继续走上面的流程
+// 直到 根目录下 如果还找不到  那么就报错
+过程：
+console.log(module.paths);
+// [ 'C:\\Users\\iroc\\Desktop\\md-transform\\node_modules',
+//   'C:\\Users\\iroc\\Desktop\\node_modules',
+//   'C:\\Users\\iroc\\node_modules',
+//   'C:\\Users\\node_modules',
+//   'C:\\node_modules' ]

@@ -1,0 +1,15 @@
+{
+  "name": "md-transform",
+  "version": "1.0.0",
+  "description": "- 列表1\r - 列表2\r - 列表3\r - 列表4\r - 列表5\r - 列表6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-markdown": "^0.1.1"
+  }
+}
