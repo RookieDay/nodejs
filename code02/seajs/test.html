@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- script标签后面加 async="async" 可以把同步变异步 异步去加载了 下面的
+  执行不会影响继续执行 所以下面会报错-->
+    <script src="../lib/seajs-3.0.0/dist/sea.js" async="async"></script>
+    <script>
+        window.onload = function() {
+
+        };
+
+        // seajs.use 和 Document ready 没有任何关系
+        seajs.use(['./cal.js', '../lib/jquery/jquer.js'], function(cal, $) {
+            // window.onload = function () {
+
+            // };
+
+            $(function() {
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

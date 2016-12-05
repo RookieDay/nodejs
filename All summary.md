@@ -345,6 +345,7 @@ C:\Users\iroc\Desktop\code\seajs\a>
 
 
 ## Global
+文件之间require他们直接就共享了一个global
 
 ### __dirname 和 __filename
 

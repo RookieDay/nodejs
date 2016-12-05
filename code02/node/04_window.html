@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>浏览器中的 window 对象</title>
+</head>
+
+<body>
+  <script>
+
+    // 在浏览器环境中，默认声明的全局变量都属于 全局的 window 对象
+    var foo = 'bar';
+    console.log(foo); // => bar
+
+    console.log(window.foo); // => bar
+  </script>
+</body>
+
+</html>
