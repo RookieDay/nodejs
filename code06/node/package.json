@@ -1,0 +1,19 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Node.js 第五天案例",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iconv-lite": "^0.4.13",
+    "markdown-it": "^6.0.1",
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5"
+  }
+}
