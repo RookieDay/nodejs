@@ -471,14 +471,16 @@ console.log(module.paths);
 
 - 第一种方式：通过指定镜像源地址来下载包：
 `npm install 包名 --registry=https://registry.npm.taobao.org`
-
+http://npm.taobao.org/
 - 第二种方式：通过 淘宝提供的一个 cnpm 全局命令行工具
   + 安装全局命令行工具 `npm install -g cnpm`
   + 基本使用`cnpm install 包名`
 
 - 第三种方式：通过一个全局命令行工具 `nrm` 来管理我们的镜像源地址
+npm uninstall -g nrm
   + 安装nrm `npm install -g nrm`
   + 基本使用
-    * 显示当前所有可用镜像源 `nrm ls`
+      nrm
+    * 显示当前所有可用镜像源 `nrm ls`    管理我们的镜像地址
     * 显示当前正在使用的镜像源 `nrm current`
     * 切换镜像源 `nrm use 镜像源名称`
