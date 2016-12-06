@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>拼接字符串</title>
+</head>
+
+<body>
+  <div class="container">
+  </div>
+  <script>
+  $.ajax({
+    url: '',
+    data: '',
+    type: '',
+    dataType: '',
+    success: function(data) {
+      var list = data.list;
+      var str = '';
+      for (var i = 0; i < list.length; i++) {
+        str + ='<div class="col-md-3">';
+        str + ='<a href="">'+list[i].name+'</a>';
+        str + ='<a href="">'+list[i].age+'</a>';
+        str+='</div>';
+      }
+    }
+  });
+  </script>
+</body>
+
+</html>

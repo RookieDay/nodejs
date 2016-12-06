@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>var-for for循环中的i变量</title>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<script>
+  "use strict";
+
+  var oLis = document.querySelectorAll('li');
+
+  // 通过 var 声明的便令 i，变成是全局变量，所以每一次循环，新的 i 值都会覆盖全局变量
+  //  for (var i = 0; i< oLis.length; i++){
+  //    oLis[i].index = i;
+  //    oLis[i].addEventListener('click',function (e) {
+  //      alert(this.index);
+  //    });
+  //  }
+  // console.log(i);
+
+  // 通过 let 声明的变量，i 只在本轮循环内有效，所以每一次循环的 i 都是一个新的变量值
+  for (let i = 0; i < oLis.length; i++) {
+    oLis[i].addEventListener('click', function (e) {
+      alert(i);
+    });
+  }
+
+</script>
+</body>
+</html>
