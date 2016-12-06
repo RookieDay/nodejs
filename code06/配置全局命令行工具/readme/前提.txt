@@ -1,0 +1,9 @@
+1. 通过 npm root -g 可以查看当前全局命令行工具软化所在的目录
+2. 例如：全局命令行工具目录是：C:\Users\GL\AppData\Roaming\npm\node_modules 执行的时候执行的是这个目录下的cmd文件
+3. 那么在 C:\dev\nvm\npm 该目录下随便找一个 后缀名是 .cmd  的文件
+4. 复制一个副本出来
+5. 然后将该文件改为你自己想要的命令行工具名
+6. 右键 -> 编辑 *.cmd 文件
+7. 在该文件中将 `"%~dp0\node.exe"  "%~dp0\node_modules\less\bin\lessc" %*` 改为  `"%~dp0\node.exe"  "%~dp0\node_modules\itcast\index.js" %*`
+8. 该完之后，打开命令台，输入你刚才新建的那个 *.cmd 文件名 然后敲回车
+9. 如果能看到里面的 index.js 中的代码被执行了，说明成功了
