@@ -108,7 +108,7 @@ iconv.encodingExists("us-ascii")
 ### 3.4 命令行工具：项目初始化
 
 #### 在 Windows 上配置全局命令行工具
- 
+   
 1. 通过 npm root -g 可以查看当前全局命令行工具软化所在的目录
 2. 例如：全局命令行工具目录是：C:\dev\nvm\npm\node_modules
 3. 那么在 C:\dev\nvm\npm 该目录下随便找一个 后缀名是 .cmd  的文件

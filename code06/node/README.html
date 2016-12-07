@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Markdown - 2016-05-05 05:16:52</title>
+  <title> Markdown - 2016-12-07 10:11:00</title>
   <style>
   body{
     background-color: #f4f4f4;
@@ -131,9 +131,23 @@ iconv.encodingExists(&quot;us-ascii&quot;)
 </ol>
 <h3>监视文件变化</h3>
 <h4>使用 browser-sync 浏览器同步刷新</h4>
+<p><a href="%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99">https://browsersync.io/docs/</a></p>
 <ol>
 <li>安装 <code>npm install --save-dev</code></li>
+<li>在代码中使用</li>
 </ol>
+<pre><code>https://browsersync.io/docs/api/
+var bs = require(&quot;browser-sync&quot;).create();
+
+// 初始化开启一个服务，它会自动在浏览器中打开
+bs.init({
+    server: &quot;./app&quot;
+});
+
+// 手动刷新指定的页面，该文件必须属于 init 里面的 server 指定的根路径
+bs.reload(&quot;*.html&quot;);
+</code></pre>
+<p>流在现实世界中是无处不在的。水流</p>
 <h3>3.5 文件流</h3>
 <h2>网络编程</h2>
 <p>我们处于互联网时代，我们可以随时随地通过 Internet 上网、浏览新闻、玩LOL、上淘宝购物等等。

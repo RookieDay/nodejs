@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dockerizing a Node.js web app | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../../www.google-analytics.com/analytics-1.js'/*tpa=http://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="/en" id="logo">
+              <img src="/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="/en/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="/en/download/">Downloads</a>
+                        </li>
+                        <li class="active">
+                            <a href="/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                                <li>
+                                            <a href="/en/docs/">Docs</a>
+                                </li>
+                                <li>
+                                            <a href="/en/docs/es6/">ES6 in Node.js</a>
+                                </li>
+                                <li>
+                                            <a href="/en/docs/faq/">FAQ</a>
+                                </li>
+                                <li>
+                                        <a href="/dist/latest-v4.x/docs/api">v4.4.2 API <span class="small color-lightgray">LTS</span></a>
+                                </li>
+                                <li>
+                                        <a href="/dist/latest-v5.x/docs/api">v5.10.1 API</a>
+                                </li>
+                                <li>
+                                            <a href="/en/docs/guides/">Guides</a>
+                                </li>
+                </ul>
+            </aside>
+
+            <article>
+                <a class="edit-link" href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/docs/guides/nodejs-docker-webapp.md  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/edit/master/locale/en/docs/guides/nodejs-docker-webapp.md%27" tppabs="https://github.com/nodejs/nodejs.org/edit/master/locale/en/docs/guides/nodejs-docker-webapp.md">Edit on GitHub</a> <h1>Dockerizing a Node.js web app<a name="dockerizing-a-node-js-web-app" class="anchor" href="#dockerizing-a-node-js-web-app"></a></h1><p>The goal of this example is to show you how to get a Node.js application into a
+Docker container. The guide is intended for development, and <em>not</em> for a
+production deployment. The guide also assumes you have a working <a href="javascript:if(confirm(%27https://docs.docker.com/engine/installation/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://docs.docker.com/engine/installation/%27" tppabs="https://docs.docker.com/engine/installation/">Docker
+installation</a> and a basic
+understanding of how a Node.js application is structured.</p>
+<p>In the first part of this guide we will create a simple web application in
+Node.js, then we will build a Docker image for that application, and lastly we
+will run the image as a container.</p>
+<p>Docker allows you to package an application with all of its dependencies into a
+standardized unit, called a container, for software development. A container is
+a stripped-to-basics version of a Linux operating system. An image is software
+you load into a container.</p>
+<h2>Create the Node.js app<a name="create-the-node-js-app" class="anchor" href="#create-the-node-js-app"></a></h2><p>First, create a new directory where all the files would live. In this directory
+create a <code>package.json</code> file that describes your app and its dependencies:</p>
+<pre><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;docker_web_app&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;version&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;description&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Node.js on Docker&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;author&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;First Last &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6107081312154f0d001215210419000c110d044f020e0c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;main&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;server.js&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;start&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;node server.js&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;express&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;^4.13.3&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Then, create a <code>server.js</code> file that defines a web app using the
+<a href="javascript:if(confirm(%27http://expressjs.com/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://expressjs.com/%27" tppabs="http://expressjs.com/">Express.js</a> framework:</p>
+<pre><code class="language-javascript"><span class="token string">&apos;use strict&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Constants</span>
+<span class="token keyword">const</span> PORT <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// App</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello world\n&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>PORT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Running on http://localhost:&apos;</span> <span class="token operator">+</span> PORT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In the next steps, we&apos;ll look at how you can run this app inside a Docker
+container using the official Docker image. First, you&apos;ll need to build a Docker
+image of your app.</p>
+<h2>Creating a Dockerfile<a name="creating-a-dockerfile" class="anchor" href="#creating-a-dockerfile"></a></h2><p>Create an empty file called <code>Dockerfile</code>:</p>
+<pre><code class="language-markup">touch Dockerfile
+</code></pre>
+<p>Open the <code>Dockerfile</code> in your favorite text editor</p>
+<p>The first thing we need to do is define from what image we want to build from.
+Here we will use the latest LTS (long term support) version <code>argon</code> of <code>node</code>
+available from the <a href="javascript:if(confirm(%27https://hub.docker.com/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://hub.docker.com/%27" tppabs="https://hub.docker.com/">Docker Hub</a>:</p>
+<pre><code class="language-docker"><span class="token keyword">FROM</span> node<span class="token punctuation">:</span>argon
+</code></pre>
+<p>Next we create a directory to hold the application code inside the image, this
+will be the working directory for your application:</p>
+<pre><code class="language-docker"><span class="token comment" spellcheck="true"># Create app directory</span>
+<span class="token keyword">RUN</span> mkdir <span class="token punctuation">-</span>p /usr/src/app
+<span class="token keyword">WORKDIR</span> /usr/src/app
+</code></pre>
+<p>This image comes with Node.js and NPM already installed so the next thing we
+need to do is to install your app dependencies using the <code>npm</code> binary:</p>
+<pre><code class="language-docker"><span class="token comment" spellcheck="true"># Install app dependencies</span>
+<span class="token keyword">COPY</span> package.json /usr/src/app/
+<span class="token keyword">RUN</span> npm install
+</code></pre>
+<p>To bundle your app&apos;s source code inside the Docker image, use the <code>COPY</code>
+instruction:</p>
+<pre><code class="language-docker"><span class="token comment" spellcheck="true"># Bundle app source</span>
+<span class="token keyword">COPY</span> . /usr/src/app
+</code></pre>
+<p>Your app binds to port <code>8080</code> so you&apos;ll use the <code>EXPOSE</code> instruction to have it
+mapped by the <code>docker</code> daemon:</p>
+<pre><code class="language-docker"><span class="token keyword">EXPOSE</span> 8080
+</code></pre>
+<p>Last but not least, define the command to run your app using <code>CMD</code> which defines
+your runtime. Here we will use the basic <code>npm start</code> which will run 
+<code>node server.js</code> to start your server:</p>
+<pre><code class="language-docker"><span class="token keyword">CMD</span> <span class="token punctuation">[</span> <span class="token string">&quot;npm&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;start&quot;</span> <span class="token punctuation">]</span>
+</code></pre>
+<p>Your <code>Dockerfile</code> should now look like this:</p>
+<pre><code class="language-docker"><span class="token keyword">FROM</span> node<span class="token punctuation">:</span>argon
+
+<span class="token comment" spellcheck="true"># Create app directory</span>
+<span class="token keyword">RUN</span> mkdir <span class="token punctuation">-</span>p /usr/src/app
+<span class="token keyword">WORKDIR</span> /usr/src/app
+
+<span class="token comment" spellcheck="true"># Install app dependencies</span>
+<span class="token keyword">COPY</span> package.json /usr/src/app/
+<span class="token keyword">RUN</span> npm install
+
+<span class="token comment" spellcheck="true"># Bundle app source</span>
+<span class="token keyword">COPY</span> . /usr/src/app
+
+<span class="token keyword">EXPOSE</span> 8080
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span> <span class="token string">&quot;npm&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;start&quot;</span> <span class="token punctuation">]</span>
+</code></pre>
+<h2>Building your image<a name="building-your-image" class="anchor" href="#building-your-image"></a></h2><p>Go to the directory that has your <code>Dockerfile</code> and run the following command to
+build the Docker image. The <code>-t</code> flag lets you tag your image so it&apos;s easier to
+find later using the <code>docker images</code> command:</p>
+<pre><code class="language-bash">$ docker build -t <span class="token operator">&lt;</span>your username<span class="token operator">&gt;</span>/node-web-app <span class="token keyword">.</span>
+</code></pre>
+<p>Your image will now be listed by Docker:</p>
+<pre><code class="language-bash">$ docker images
+
+<span class="token comment" spellcheck="true"># Example</span>
+REPOSITORY                      TAG        ID              CREATED
+node                            argon      539c0211cd76    3 weeks ago
+<span class="token operator">&lt;</span>your username<span class="token operator">&gt;</span>/node-web-app    latest     d64d3505b0d2    1 minute ago
+</code></pre>
+<h2>Run the image<a name="run-the-image" class="anchor" href="#run-the-image"></a></h2><p>Running your image with <code>-d</code> runs the container in detached mode, leaving the
+container running in the background. The <code>-p</code> flag redirects a public port to a
+private port inside the container. Run the image you previously built:</p>
+<pre><code class="language-bash">$ docker run -p 49160:8080 -d <span class="token operator">&lt;</span>your username<span class="token operator">&gt;</span>/node-web-app
+</code></pre>
+<p>Print the output of your app:</p>
+<pre><code class="language-bash"><span class="token comment" spellcheck="true"># Get container ID</span>
+$ docker <span class="token function">ps</span>
+
+<span class="token comment" spellcheck="true"># Print app output</span>
+$ docker logs <span class="token operator">&lt;</span>container id<span class="token operator">&gt;</span>
+
+<span class="token comment" spellcheck="true"># Example</span>
+Running on http://localhost:8080
+</code></pre>
+<p>If you need to go inside the container you can use the <code>exec</code> command:</p>
+<pre><code class="language-bash"><span class="token comment" spellcheck="true"># Enter the container</span>
+$ docker <span class="token function">exec</span> -it <span class="token operator">&lt;</span>container id<span class="token operator">&gt;</span> /bin/bash
+</code></pre>
+<h2>Test<a name="test" class="anchor" href="#test"></a></h2><p>To test your app, get the port of your app that Docker mapped:</p>
+<pre><code class="language-bash">$ docker <span class="token function">ps</span>
+
+<span class="token comment" spellcheck="true"># Example</span>
+ID            IMAGE                                COMMAND    <span class="token punctuation">..</span>.   PORTS
+ecce33b30ebf  <span class="token operator">&lt;</span>your username<span class="token operator">&gt;</span>/node-web-app:latest  npm start  <span class="token punctuation">..</span>.   49160-<span class="token operator">&gt;</span>8080
+</code></pre>
+<p>In the example above, Docker mapped the <code>8080</code> port inside of the container to
+the port <code>49160</code> on your machine.</p>
+<p>Now you can call your app using <code>curl</code> (install if needed via: <code>sudo apt-get
+install curl</code>):</p>
+<pre><code class="language-bash">$ curl -i localhost:49160
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html<span class="token punctuation">;</span> charset<span class="token operator">=</span>utf-8
+Content-Length: 12
+Date: Sun, 02 Jun 2013 03:53:22 GMT
+Connection: keep-alive
+
+Hello world
+</code></pre>
+<p>We hope this tutorial helped you get up and running a simple Node.js application
+on Docker.</p>
+<p>You can find more information about Docker and Node.js on Docker in the
+following places:</p>
+<ul>
+<li><a href="javascript:if(confirm(%27https://registry.hub.docker.com/_/node/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://registry.hub.docker.com/_/node/%27" tppabs="https://registry.hub.docker.com/_/node/">Official Node.js Docker Image</a></li>
+<li><a href="javascript:if(confirm(%27https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md%27" tppabs="https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md">Node.js Docker Best Practices Guide</a></li>
+<li><a href="javascript:if(confirm(%27https://docs.docker.com/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://docs.docker.com/%27" tppabs="https://docs.docker.com/">Official Docker documentation</a></li>
+<li><a href="javascript:if(confirm(%27http://stackoverflow.com/questions/tagged/docker  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://stackoverflow.com/questions/tagged/docker%27" tppabs="http://stackoverflow.com/questions/tagged/docker">Docker Tag on StackOverflow</a></li>
+<li><a href="javascript:if(confirm(%27https://reddit.com/r/docker  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://reddit.com/r/docker%27" tppabs="https://reddit.com/r/docker">Docker Subreddit</a></li>
+</ul>
+
+            </article>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>

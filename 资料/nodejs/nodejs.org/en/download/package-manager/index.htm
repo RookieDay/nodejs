@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Installing Node.js via package manager | Node.js</title>
+
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="http://www.google-analytics.com">
+
+    <meta name="author" content="Node.js Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+    <link rel="canonical" href="https://nodejs.org/en/download/package-manager/">
+        <link rel="alternate" href="/en/feed/blog.xml" title="Node.js Blog" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/releases.xml" title="Node.js Blog: Releases" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/vulnerability.xml" title="Node.js Blog: Vulnerability Reports" type="application/rss+xml">
+        <link rel="alternate" href="/en/feed/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
+    <link rel="stylesheet" href="/en/styles.css" media="all">
+    <link rel="stylesheet" href="../../../../fonts.googleapis.com/css-family=Source+Sans+Pro-400,600.css" tppabs="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <script>
+        document.querySelector('html').className += " has-js";
+
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='../../../../www.google-analytics.com/analytics-1.js'/*tpa=http://www.google-analytics.com/analytics.js*/;
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+    
+            <a href="/en" id="logo">
+              <img src="/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
+            </a>
+    
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li>
+                        <a href="/en/">Home</a>
+                    </li>
+                        <li>
+                            <a href="/en/about/">About</a>
+                        </li>
+                        <li class="active">
+                            <a href="/en/download/">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="/en/docs/">Docs</a>
+                        </li>
+                        <li>
+                            <a href="/en/foundation/">Foundation</a>
+                        </li>
+                        <li>
+                            <a href="/en/get-involved/">Get Involved</a>
+                        </li>
+                        <li>
+                            <a href="/en/security/">Security</a>
+                        </li>
+                        <li>
+                            <a href="/en/blog/">News</a>
+                        </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <div id="main">
+        <div class="container">
+            <h1>Installing Node.js via package manager<a name="installing-node-js-via-package-manager" class="anchor" href="#installing-node-js-via-package-manager"></a></h1><p><strong><em>Note:</em></strong> The packages on this page are maintained and supported by their respective packagers, <strong>not</strong> the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.</p>
+<hr>
+<ul>
+<li><a href="#arch-linux">Arch Linux</a></li>
+<li><a href="#debian-and-ubuntu-based-linux-distributions">Debian and Ubuntu based Linux distributions</a></li>
+<li><a href="#enterprise-linux-and-fedora">Enterprise Linux and Fedora</a></li>
+<li><a href="#freebsd-and-openbsd">FreeBSD and OpenBSD</a></li>
+<li><a href="#gentoo">Gentoo</a></li>
+<li><a href="#netbsd">NetBSD</a></li>
+<li><a href="#opensuse-and-sle">openSUSE and SLE</a></li>
+<li><a href="#osx">OSX</a></li>
+<li><a href="#smartos-and-illumos">SmartOS and illumos</a></li>
+<li><a href="#void-linux">Void Linux</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul>
+<hr>
+<h2>Arch Linux<a name="arch-linux" class="anchor" href="#arch-linux"></a></h2><p>Node.js and npm packages are available in the Community Repository.</p>
+<pre><code class="language-bash">pacman -S nodejs npm
+</code></pre>
+<h2>Debian and Ubuntu based Linux distributions<a name="debian-and-ubuntu-based-linux-distributions" class="anchor" href="#debian-and-ubuntu-based-linux-distributions"></a></h2><p>Also including: <strong>Linux Mint</strong>, <strong>Linux Mint Debian Edition (LMDE)</strong>, <strong>elementaryOS</strong> and others.</p>
+<p>Node.js is available from the <a href="javascript:if(confirm(%27https://nodesource.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodesource.com/%27" tppabs="https://nodesource.com/">NodeSource</a> Debian and Ubuntu binary distributions repository (formerly <a href="javascript:if(confirm(%27https://github.com/chrislea  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/chrislea%27" tppabs="https://github.com/chrislea">Chris Lea&apos;s</a> Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at <a href="javascript:if(confirm(%27https://github.com/nodesource/distributions  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodesource/distributions%27" tppabs="https://github.com/nodesource/distributions">nodesource/distributions</a>.</p>
+<p><strong>NOTE:</strong> If you are using Ubuntu Precise or Debian Wheezy, you might want to read about <a href="javascript:if(confirm(%27https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md%27" tppabs="https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md">running Node.js &gt;= 4.x on older distros</a>.</p>
+<pre><code class="language-bash">curl -sL https://deb.nodesource.com/setup_4.x <span class="token operator">|</span> <span class="token function">sudo</span> -E <span class="token function">bash</span> -
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y nodejs
+</code></pre>
+<p>Alternatively, for Node.js v5:</p>
+<pre><code class="language-bash">curl -sL https://deb.nodesource.com/setup_5.x <span class="token operator">|</span> <span class="token function">sudo</span> -E <span class="token function">bash</span> -
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y nodejs
+</code></pre>
+<p><strong><em>Optional</em></strong>: install build tools</p>
+<p>To compile and install native addons from npm you may also need to install build tools:</p>
+<pre><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y build-essential
+</code></pre>
+<p><strong>Available architectures:</strong></p>
+<ul>
+<li><strong>i386</strong> (32-bit)</li>
+<li><strong>amd64</strong> (64-bit)</li>
+<li><strong>armhf</strong> (ARM 32-bit hard-float, ARMv7 and up: <em>arm-linux-gnueabihf</em>)</li>
+</ul>
+<p><strong>Supported Ubuntu versions:</strong></p>
+<ul>
+<li><strong>Ubuntu 12.04 LTS</strong> (Precise Pangolin)</li>
+<li><strong>Ubuntu 14.04 LTS</strong> (Trusty Tahr)</li>
+<li><strong>Ubuntu 15.04</strong> (Vivid Vervet)</li>
+</ul>
+<p><strong>Supported Debian versions:</strong></p>
+<ul>
+<li><strong>Debian 7</strong> (wheezy)</li>
+<li><strong>Debian 8 / stable</strong> (jessie)</li>
+<li><strong>Debian testing</strong> (stretch, aliased to jessie)</li>
+<li><strong>Debian unstable</strong> (sid)</li>
+</ul>
+<p>A Node.js package is also available in the <a href="http://packages.debian.org/search?searchon=names&amp;keywords=nodejs">official repo</a> for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as &quot;nodejs&quot;. It only installs a <code>nodejs</code> binary.</p>
+<p>The <a href="http://packages.debian.org/search?searchon=names&amp;keywords=nodejs-legacy">nodejs-legacy package</a> installs a <code>node</code> symlink that is needed by many modules to build and run correctly.
+The Node.js modules available in the distribution official repositories do not need it.</p>
+<p><strong>Supported Linux Mint versions:</strong></p>
+<ul>
+<li><strong>Linux Mint 13 &quot;Maya&quot;</strong> (via Ubuntu 12.04 LTS)</li>
+<li><strong>Linux Mint 17 &quot;Qiana&quot;</strong> (via Ubuntu 14.04 LTS)</li>
+<li><strong>Linux Mint 17.1 &quot;Rebecca&quot;</strong> (via Ubuntu 14.04 LTS)</li>
+<li><strong>Linux Mint 17.2 &quot;Rafaela&quot;</strong> (via Ubuntu 14.04 LTS)</li>
+<li><strong>Linux Mint Debian Edition (LMDE) 2 &quot;Betsy&quot;</strong> (via Debian 8)</li>
+</ul>
+<p><strong>Supported elementary OS versions:</strong></p>
+<ul>
+<li><strong>elementary OS Luna</strong> (via Ubuntu 12.04 LTS)</li>
+<li><strong>elementary OS Freya</strong> (via Ubuntu 14.04 LTS)</li>
+</ul>
+<p><strong>Supported Trisquel versions:</strong></p>
+<ul>
+<li><strong>Trisquel 6 &quot;Toutatis&quot;</strong> (via Ubuntu 12.04 LTS)</li>
+<li><strong>Trisquel 7 &quot;Belenos&quot;</strong> (via Ubuntu 14.04 LTS)</li>
+</ul>
+<p><strong>Supported BOSS versions:</strong></p>
+<ul>
+<li><strong>BOSS 5.0 &quot;Anokha&quot;</strong> (via Debian 7)</li>
+</ul>
+<h2>Enterprise Linux and Fedora<a name="enterprise-linux-and-fedora" class="anchor" href="#enterprise-linux-and-fedora"></a></h2><p>Including <strong>Red Hat&#xAE; Enterprise Linux&#xAE;</strong> / <strong>RHEL</strong>, <strong>CentOS</strong> and <strong>Fedora</strong>.</p>
+<p>Node.js is available from the <a href="javascript:if(confirm(%27https://nodesource.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://nodesource.com/%27" tppabs="https://nodesource.com/">NodeSource</a> Enterprise Linux and Fedora binary distributions repository. Support for this repository, along with its scripts, can be found on GitHub at <a href="javascript:if(confirm(%27https://github.com/nodesource/distributions  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodesource/distributions%27" tppabs="https://github.com/nodesource/distributions">nodesource/distributions</a>.</p>
+<p>Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the <strong><a href="javascript:if(confirm(%27https://fedoraproject.org/wiki/EPEL  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://fedoraproject.org/wiki/EPEL%27" tppabs="https://fedoraproject.org/wiki/EPEL">EPEL</a></strong> repository being available. The setup script will check and provide instructions if it is not installed.</p>
+<p>Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:</p>
+<pre><code class="language-bash">curl --silent --location https://rpm.nodesource.com/setup_4.x <span class="token operator">|</span> <span class="token function">bash</span> -
+</code></pre>
+<p>Alternatively for Node.js v5:</p>
+<pre><code class="language-bash">curl --silent --location https://rpm.nodesource.com/setup_5.x <span class="token operator">|</span> <span class="token function">bash</span> -
+</code></pre>
+<p>Alternatively for Node.js 0.10:</p>
+<pre><code class="language-bash">curl --silent --location https://rpm.nodesource.com/setup <span class="token operator">|</span> <span class="token function">bash</span> -
+</code></pre>
+<p>Then install, as root:</p>
+<pre><code class="language-bash">yum -y <span class="token function">install</span> nodejs
+</code></pre>
+<p><strong><em>Optional</em></strong>: install build tools</p>
+<p>To compile and install native addons from npm you may also need to install build tools:</p>
+<pre><code class="language-bash">yum <span class="token function">install</span> gcc-c++ <span class="token function">make</span>
+<span class="token comment" spellcheck="true"># or: yum groupinstall &apos;Development Tools&apos;</span>
+</code></pre>
+<p><strong>Available architectures:</strong></p>
+<ul>
+<li><strong>i386</strong> (32-bit, not available for EL7)</li>
+<li><strong>x86_64</strong> (64-bit)</li>
+</ul>
+<p><strong>Supported Red Hat&#xAE; Enterprise Linux&#xAE; versions:</strong></p>
+<ul>
+<li><strong>RHEL 5</strong> (32-bit and 64-bit)</li>
+<li><strong>RHEL 6</strong> (32-bit and 64-bit)</li>
+<li><strong>RHEL 7</strong> (64-bit)</li>
+</ul>
+<p><strong>Supported CentOS versions:</strong></p>
+<ul>
+<li><strong>CentOS 5</strong> (32-bit and 64-bit)</li>
+<li><strong>CentOS 6</strong> (32-bit and 64-bit)</li>
+<li><strong>CentOS 7</strong> (64-bit)</li>
+</ul>
+<p><strong>Supported CloudLinux versions:</strong></p>
+<ul>
+<li><strong>CloudLinux 6</strong> (32-bit and 64-bit)</li>
+</ul>
+<p><strong>Supported Fedora versions:</strong></p>
+<ul>
+<li><strong>Fedora 21 (Twenty One)</strong> (32-bit and 64-bit)</li>
+<li><strong>Fedora 20 (Heisenbug)</strong> (32-bit and 64-bit)</li>
+<li><strong>Fedora 19 (Schr&#xF6;dinger&apos;s Cat)</strong> (32-bit and 64-bit)</li>
+</ul>
+<p><strong>Other distributions known to be supported:</strong></p>
+<ul>
+<li><strong>Oracle Linux</strong> (mirrors RHEL very closely)</li>
+<li><strong>Amazon Linux</strong> (tested on 2014.03)</li>
+</ul>
+<h3>Alternatives<a name="alternatives" class="anchor" href="#alternatives"></a></h3><p>Official <strong>Fedora</strong> <a href="javascript:if(confirm(%27https://apps.fedoraproject.org/packages/nodejs  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://apps.fedoraproject.org/packages/nodejs%27" tppabs="https://apps.fedoraproject.org/packages/nodejs">Node.js</a> and <a href="javascript:if(confirm(%27https://apps.fedoraproject.org/packages/npm  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://apps.fedoraproject.org/packages/npm%27" tppabs="https://apps.fedoraproject.org/packages/npm">npm</a> packages are available in Fedora 18 and later.  Install with:</p>
+<pre><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> nodejs npm
+</code></pre>
+<p>In a hurry for the latest updates?  <a href="javascript:if(confirm(%27https://fedoraproject.org/wiki/QA:Updates_Testing  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://fedoraproject.org/wiki/QA:Updates_Testing%27" tppabs="https://fedoraproject.org/wiki/QA:Updates_Testing">Grab them from updates-testing.</a></p>
+<p><strong>Enterprise Linux</strong> (RHEL and CentOS) users may use the Node.js and npm packages from the <a href="javascript:if(confirm(%27https://fedoraproject.org/wiki/EPEL  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://fedoraproject.org/wiki/EPEL%27" tppabs="https://fedoraproject.org/wiki/EPEL">EPEL</a> repository.</p>
+<p>Install the appropriate <em>epel-release</em> RPM for your version (found on the <a href="javascript:if(confirm(%27https://fedoraproject.org/wiki/EPEL  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://fedoraproject.org/wiki/EPEL%27" tppabs="https://fedoraproject.org/wiki/EPEL">EPEL</a> repository homepage), then run:</p>
+<pre><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> nodejs npm --enablerepo<span class="token operator">=</span>epel
+</code></pre>
+<p>In a hurry for the latest updates?  <a href="javascript:if(confirm(%27https://fedoraproject.org/wiki/EPEL/testing  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://fedoraproject.org/wiki/EPEL/testing%27" tppabs="https://fedoraproject.org/wiki/EPEL/testing">Grab them from epel-testing.</a></p>
+<p><strong>Available architectures:</strong></p>
+<ul>
+<li><strong>i686</strong> (32-bit, not available for EL7)</li>
+<li><strong>x86_64</strong> (64-bit)</li>
+<li><strong>armv6hl</strong> (Raspberry Pi, <a href="javascript:if(confirm(%27http://pidora.ca/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://pidora.ca/%27" tppabs="http://pidora.ca/">Pidora</a> only)</li>
+<li><strong>armv7hl</strong> (32-bit ARM hard-float, ARMv7 and up, Fedora only)</li>
+</ul>
+<p><strong>Supported Red Hat&#xAE; Enterprise Linux&#xAE; versions:</strong></p>
+<ul>
+<li><strong>RHEL 6</strong> (i686/x86_64)</li>
+<li><strong>RHEL 7</strong> (x86_64)</li>
+</ul>
+<p>Additionally, versions of <strong>CentOS</strong> and <strong>Scientific Linux</strong> corresponding to the above RHEL versions are also officially supported by all EPEL packages, including nodejs.  Amazon Linux is not officially supported by EPEL due to significant incompatibilities previously reported to the epel-devel mailing list, however you might find that nodejs at least still works.</p>
+<p><strong>Supported Fedora versions:</strong></p>
+<ul>
+<li><strong>Fedora Rawhide</strong> (i686/x86_64/armv7hl)</li>
+<li><strong>Fedora 21</strong> (i686/x86_64/armv7hl)</li>
+<li><strong>Fedora 20 (Heisenbug)</strong> (i686/x86_64/armv6hl/armv7hl)</li>
+<li><strong>Fedora 19 (Schr&#xF6;dinger&apos;s Cat)</strong> (i686/x86_64/armv7hl)</li>
+</ul>
+<h2>FreeBSD and OpenBSD<a name="freebsd-and-openbsd" class="anchor" href="#freebsd-and-openbsd"></a></h2><p>Node.js is available through the ports system.</p>
+<pre><code class="language-bash">/usr/ports/www/node
+</code></pre>
+<p>Development versions are also available using ports</p>
+<pre><code class="language-bash"><span class="token function">cd</span> /usr/ports/www/node-devel/ <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span> clean
+</code></pre>
+<p>Or packages on FreeBSD:</p>
+<pre><code class="language-bash">pkg_add -r node-devel
+</code></pre>
+<p>Using <a href="javascript:if(confirm(%27https://wiki.freebsd.org/pkgng  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://wiki.freebsd.org/pkgng%27" tppabs="https://wiki.freebsd.org/pkgng">pkg-ng</a> on FreeBSD</p>
+<pre><code class="language-bash">pkg <span class="token function">install</span> node
+</code></pre>
+<p>Or the development versions:</p>
+<pre><code class="language-bash">pkg <span class="token function">install</span> node-devel
+</code></pre>
+<h2>Gentoo<a name="gentoo" class="anchor" href="#gentoo"></a></h2><p>Node.js is available in the portage tree.</p>
+<pre><code class="language-bash">emerge nodejs
+</code></pre>
+<h2>NetBSD<a name="netbsd" class="anchor" href="#netbsd"></a></h2><p>Node.js is available in the pkgsrc tree:</p>
+<pre><code class="language-bash"><span class="token function">cd</span> /usr/pkgsrc/lang/nodejs <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
+<p>Or install a binary package (if available for your platform) using pkgin:</p>
+<pre><code class="language-bash">pkgin -y <span class="token function">install</span> nodejs
+</code></pre>
+<h2>openSUSE and SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2><p><a href="http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&amp;package=nodejs">Download Node.js via openSUSE one-click</a>.</p>
+<p>Available RPM packages for: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory and Tumbleweed; SLE 11 (with SP1/SP2/SP3 variations).</p>
+<p>Example install on openSUSE 13.1:</p>
+<pre><code class="language-bash"><span class="token function">sudo</span> zypper ar \
+  http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_13.1/ \
+  Node.js
+<span class="token function">sudo</span> zypper <span class="token keyword">in</span> nodejs nodejs-devel
+</code></pre>
+<h2>OSX<a name="osx" class="anchor" href="#osx"></a></h2><p>Simply download the <a href="javascript:if(confirm(%27http://nodejs.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nodejs.org/#download%27" tppabs="http://nodejs.org/#download">Macintosh Installer</a> direct from the <a href="javascript:if(confirm(%27http://nodejs.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nodejs.org/%27" tppabs="http://nodejs.org/">nodejs.org</a> web site.</p>
+<p><em>If you want to download the package with bash:</em></p>
+<pre><code class="language-bash">curl <span class="token string">&quot;https://nodejs.org/dist/latest/node-${VERSION:-<span class="token variable"><span class="token variable">$(</span><span class="token function">wget</span> -qO- https://nodejs.org/dist/latest/ <span class="token operator">|</span> <span class="token function">sed</span> -nE &apos;s<span class="token operator">|</span>.*<span class="token operator">&gt;</span>node-<span class="token punctuation">(</span>.*<span class="token variable">)</span></span>\.pkg&lt;/a&gt;.*|\1|p&apos;)}.pkg&quot;</span> <span class="token operator">&gt;</span> <span class="token string">&quot;<span class="token variable">$HOME</span>/Downloads/node-latest.pkg&quot;</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> installer -store -pkg <span class="token string">&quot;<span class="token variable">$HOME</span>/Downloads/node-latest.pkg&quot;</span> -target <span class="token string">&quot;/&quot;</span>
+</code></pre>
+<h3>Alternatives<a name="alternatives" class="anchor" href="#alternatives"></a></h3><p>Using <strong><a href="javascript:if(confirm(%27http://brew.sh/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://brew.sh/%27" tppabs="http://brew.sh/">Homebrew</a></strong>:</p>
+<pre><code class="language-bash">brew <span class="token function">install</span> node
+</code></pre>
+<p>Using <strong><a href="javascript:if(confirm(%27http://www.macports.org/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.macports.org/%27" tppabs="http://www.macports.org/">MacPorts</a></strong>:</p>
+<pre><code class="language-bash">port <span class="token function">install</span> nodejs
+</code></pre>
+<p>Using <strong><a href="javascript:if(confirm(%27https://pkgsrc.joyent.com/install-on-osx/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://pkgsrc.joyent.com/install-on-osx/%27" tppabs="https://pkgsrc.joyent.com/install-on-osx/">pkgsrc</a></strong>:</p>
+<p>Install the binary package:</p>
+<pre><code class="language-bash">pkgin -y <span class="token function">install</span> nodejs
+</code></pre>
+<p>Or build manually from pkgsrc:</p>
+<pre><code class="language-bash"><span class="token function">cd</span> pkgsrc/lang/nodejs <span class="token operator">&amp;&amp;</span> bmake <span class="token function">install</span>
+</code></pre>
+<h2>SmartOS and illumos<a name="smartos-and-illumos" class="anchor" href="#smartos-and-illumos"></a></h2><p>SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install <strong><a href="javascript:if(confirm(%27https://pkgsrc.joyent.com/install-on-illumos/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27https://pkgsrc.joyent.com/install-on-illumos/%27" tppabs="https://pkgsrc.joyent.com/install-on-illumos/">pkgsrc</a></strong>, then you may install the binary package as normal:</p>
+<pre><code class="language-bash">pkgin -y <span class="token function">install</span> nodejs
+</code></pre>
+<p>Or build manually from pkgsrc:</p>
+<pre><code class="language-bash"><span class="token function">cd</span> pkgsrc/lang/nodejs <span class="token operator">&amp;&amp;</span> bmake <span class="token function">install</span>
+</code></pre>
+<h2>Void Linux<a name="void-linux" class="anchor" href="#void-linux"></a></h2><p>Void Linux ships node.js stable in the main repository.</p>
+<pre><code class="language-bash">xbps-install -Sy nodejs
+</code></pre>
+<h2>Windows<a name="windows" class="anchor" href="#windows"></a></h2><p>Simply download the <a href="javascript:if(confirm(%27http://nodejs.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nodejs.org/#download%27" tppabs="http://nodejs.org/#download">Windows Installer</a> directly from the <a href="javascript:if(confirm(%27http://nodejs.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nodejs.org/%27" tppabs="http://nodejs.org/">nodejs.org</a> web site.</p>
+<h3>Alternatives<a name="alternatives" class="anchor" href="#alternatives"></a></h3><p>Using <strong><a href="javascript:if(confirm(%27http://chocolatey.org/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://chocolatey.org/%27" tppabs="http://chocolatey.org/">Chocolatey</a></strong>:</p>
+<pre><code class="language-bash">cinst nodejs
+<span class="token comment" spellcheck="true"># or for full install with npm</span>
+cinst nodejs.install
+</code></pre>
+<p>Using <strong><a href="javascript:if(confirm(%27http://scoop.sh/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://scoop.sh/%27" tppabs="http://scoop.sh/">Scoop</a></strong>:</p>
+<pre><code class="language-bash">scoop <span class="token function">install</span> nodejs
+</code></pre>
+
+        </div>
+    </div>
+
+    <a href="#" id="scrollToTop">&uarr; <span>Scroll to top</span></a>
+    
+    <footer  role="contentinfo">
+    
+        <div class="container">
+            <div class="linuxfoundation-footer">
+                <div class="issue-link-container">
+                    <a class="linuxfoundation-logo" href="javascript:if(confirm(%27http://collabprojects.linuxfoundation.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://collabprojects.linuxfoundation.org/%27" tppabs="http://collabprojects.linuxfoundation.org/">
+                        <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png">
+                    </a>
+                    <ul class="list-divider-pipe issue-link">
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/node/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/node/issues%27" tppabs="https://github.com/nodejs/node/issues">Report Node.js issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/nodejs.org/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/nodejs.org/issues%27" tppabs="https://github.com/nodejs/nodejs.org/issues">Report website issue</a></li>
+                        <li><a href="javascript:if(confirm(%27https://github.com/nodejs/help/issues  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/nodejs/help/issues%27" tppabs="https://github.com/nodejs/help/issues">Get Help</a></li>
+                    </ul>
+                </div>
+    
+                <p>© 2016 Node.js Foundation. All Rights Reserved. Portions of this site originally © 2016 Joyent. </p>
+                <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
+                <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
+                <p>Linux is a registered <a href="javascript:if(confirm(%27http://www.linuxfoundation.org/programs/legal/trademark  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.linuxfoundation.org/programs/legal/trademark%27" tppabs="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
+                <p>
+                   <a href="javascript:if(confirm(%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27https://raw.githubusercontent.com/nodejs/node/master/LICENSE%27" tppabs="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
+                </p>
+            </div>
+        </div>
+    
+    </footer>
+    
+    <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
+    <script type="text/javascript">
+        var $scrollToTop = document.getElementById('scrollToTop');
+        (window.onscroll = function() {
+            $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+        })();
+        $scrollToTop.onclick = function() {
+            window.scrollTo(0, 0);
+            return false;
+        };
+    </script>
+    
+    <script>
+    (function(d,e,m,s){
+        if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
+        m=d.createElement(e);
+        s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
+        m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
+        s.parentNode.insertBefore(m,s);
+    })(document,'script');
+    </script>
+    
+</body>
+</html>
