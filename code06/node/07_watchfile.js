@@ -11,6 +11,7 @@ bs.init({
 });
 
 let env = process.env['NODE_ENV'];
+// env = "develop";
 console.log(env)
     // 得到我们的模板字符串
 const templateStr = fs.readFileSync(path.join(__dirname, 'template.less'), 'utf8');
