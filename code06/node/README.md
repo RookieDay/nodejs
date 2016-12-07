@@ -127,7 +127,7 @@ iconv.encodingExists("us-ascii")
 [https://browsersync.io/docs/](官方网站)
 1. 安装 `npm install --save-dev `
 2. 在代码中使用
-
+ 
 ```
 https://browsersync.io/docs/api/
 var bs = require("browser-sync").create();

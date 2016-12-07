@@ -18,7 +18,7 @@ let writeStream = fs.createWriteStream(distPath);
 let curSize = 0;
 
 // 读取流会源源不断的读取数据，只要读取到了数据就会触发读取流的 data 事件，
-// 同时把数据传递给 data 事件的回调函数中的第一个参数
+// 同时把数据传递给 data 事件的回调函数中                                                                                           的第一个参数
 // chunk 标识 读取流使用一个 瓢 读取到的二进制数据（Buffer）
 readStream.on('data',(chunk) => {
   // 要想实现进度条，就要获取当前最新已经读取的长度
