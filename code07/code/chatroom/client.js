@@ -2,22 +2,22 @@
 
 const net = require('net');
 
-const server = net.createServer();
+// 通过一个 socket 去连接指定的 socket 服务器
+const client = net.connect({ port: 3000, host: '192.168.1.103' });
 
-let count = 0;
+// 当 客户端 socket 和服务器 socket 连接成功之后会触发回调函数
+client.on('connect', () => {
+    console.log('连接服务器成功了');
 
-// 每一个客户端只要连接到我的服务器，服务器都都会分配一个电话机用来与该客户端进行通信
-server.on('connection', (socket) => {
-    count++;
-    console.log(`welcome ${socket.localAddress}  ${socket.remotePort} join our chat room`);
-    console.log(`当前有${count}个客户端连接上来了`);
-    socket.write(`当前有${count}个客户端连接上来了`);
+    // 只有当客户端 socket 和 服务器 socket 连接成功只有才能向服务器发送数据
+    client.write('hello');
 });
 
-let port = 3000;
-
-server.listen(port, () => {
-    console.log(`server is listening at port ${port}`);
+client.on('data', (data) => {
+    console.log(data.toString());
 });
-console.log('disconnected from server');
+
+// 当 客户端 socket 关闭的时候，会触发 客户端 socket 的 end 事件
+client.on('end', () => {
+    console.log('disconnected from server');
 });
