@@ -7,7 +7,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/code05/node/03_debug_async.js",
+            "program": "${workspaceRoot}/code07/code1/chatroom/client.js",
             "cwd": "${workspaceRoot}"
         },
         {
