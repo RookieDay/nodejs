@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>我的音乐 - 首页</title>
+  <!-- 以后在开发的时候，静态资源引用的路径最好都以 / 开头 -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <th>编号</th>
+        <th>歌曲标题</th>
+        <th>时长</th>
+        <th>歌手</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>富士山下</td>
+          <td>04:19</td>
+          <td>陈奕迅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/node_modules/art-template/dist/template.js"></script>
+  <script>
+    $.ajax({
+      url: '/music',
+      type:'get',
+      success:function (data) {
+        console.log(data);
+      }
+    });
+  </script>
+</body>
+
+</html>
