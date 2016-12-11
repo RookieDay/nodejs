@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>前台模板引擎 - artTemplate</title>
+</head>
+
+<body>
+  <script src="node_modules/art-template/dist/template.js"></script>
+  <script>
+  // 模板引擎：根据模板字符串，传入一个注入的对象数据，然后使用 一定是 正则表达式做字符串替换
+  // 模板引擎一定和 DOM 操作没有任何关系 完全是在操作字符串
+  'use strict';
+
+  var tmpStr = `{{ foo }}`;
+
+  var data = {
+    foo: 'bar'
+  };
+
+  var render = template.compile(tmpStr);
+
+  var htmlStr = render(data);
+
+  console.log(htmlStr);
+  </script>
+</body>
+
+</html>
