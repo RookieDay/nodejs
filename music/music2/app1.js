@@ -93,6 +93,7 @@ server.on('request', (req, res) => {
             let music = musicList.find((m) => {
                 return m.id === mid;
             })
+            console.log(mid);
             if (music) {
                 return res.json({
                     code: '5001',
